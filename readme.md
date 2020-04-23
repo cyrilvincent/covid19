@@ -35,9 +35,9 @@
 </ul>
 D'après les différents scenarios de modélisation, il y a 3 possibilités dans les mois à venir, dépendant du paramètre SCIR.Beta qui définit le coeficiant R après les mesures gouvernementale (porte du masque, détection, ...) :
 <ul>
-    <li>Scénario optimiste: SCIR.Beta = 0, comme le SRAS, le virus disparait en Juin</li>
+    <li>Scénario optimiste: SCIR.Beta = <0.1, comme le SRAS, le virus disparait en Juin</li>
     <li>Scénario péssimiste, SCIR.Beta = 0.3, R0 = 4, le déconfinement est un échec, la 2ème vague reprend 26 jours après soit début Juin avec un confinement mi-juin</li>
-    <li>Scénario médian, l'été va nous aider, les mesures de détection vont fonctionner, SCIR.Beta = 0.1, la 2ème vague surviendra vers Octobre-Novembre avec une intensité 3 fois moins forte que la 1ère</li>
+    <li>Scénario médian, l'été va nous aider, les mesures de détection vont fonctionner, SCIR.Beta = 0.1, le virus sera présent très faiblement pendant l'été, la 2ème vague surviendra vers Octobre-Novembre avec une intensité 3 fois moins forte que la 1ère</li>
 </ul>
 Il faudra attendre 2.5 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la propulation ayant été infectée par le virus
 Ci dessous le scénario péssimiste avec un SCIR.Beta à 1 au lieu de 0.3
