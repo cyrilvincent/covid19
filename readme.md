@@ -35,8 +35,8 @@
 </ul>
 D'après les différents scenarios de modélisation, il y a 3 possibilités dans les mois à venir, dépendant du paramètre SCIR.Beta qui définit le coeficiant R après les mesures gouvernementale (porte du masque, détection, ...) :
 <ul>
-    <li>Scénario optimiste: SCIR.Beta = <0.1, comme le SRAS, le virus disparait en Juin, + de 50000 décès</li>
-    <li>Scénario pessimiste, SCIR.Beta = 0.3, R0 = 4, le déconfinement est un échec, la 2ème vague reprend 26 jours après soit début Juin avec un confinement mi-juin</li>
+    <li>Scénario optimiste: SCIR.Beta = <0.1, comme le SRAS, le virus disparait en Juin, 23000 décès</li>
+    <li>Scénario pessimiste, SCIR.Beta = 0.3, R0 = 4, le déconfinement est un échec, la 2ème vague reprend 26 jours après soit début Juin avec un confinement mi-juin, + 50000 décès</li>
     <li>Scénario médian, l'été va nous aider, les mesures de détection vont fonctionner, SCIR.Beta = 0.1, le virus sera présent très faiblement pendant l'été, la 2ème vague surviendra vers Octobre-Novembre avec une intensité 3 fois moins forte que la 1ère, moins de 30000 décès</li>
     <li>Scénario médian pessimiste, après le déconfinement, le virus reprendra avec des taux comme aujourd'hui avec 50 décès par jour pendant 1 ans, soit 40000 à 50000 décès.</li>
 </ul>
