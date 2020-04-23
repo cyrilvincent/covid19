@@ -18,7 +18,7 @@
 <p>Ces deux derniers modèles sont assez fiables, les meilleurs résultats sont obtenus avec le dernier modèle obtenu avec une régression polynomiale de degrés 4</p>
 <img src="data/figure.png"/>
 <p>En date du 24/04</p>
-<p>A la date du déconfinement le 11 mai (J128)
+<p>A la date du déconfinement le 11 mai (J128), le modèle nous donne des chiffres assez optimistes mais avec une RValue (score) très faible pour que ces chiffres soient fiables
 <ul>
     <li>le nombre de nouveaux cas sera quasi nul!</li>
     <li>Il y aura 150000 cas confirmés</li>
