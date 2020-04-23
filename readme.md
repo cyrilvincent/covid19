@@ -39,8 +39,9 @@ D'après les différents scenarios de modélisation, il y a 3 possibilités dans
     <li>Scénario pésimiste, SCIR.Beta = 0.3, R0 = 4, le déconfinement est un échec, la 2ème vague reprend 26 jours après soit début Juin avec un confinement mi-juin</li>
     <li>Scénario médian, l'été va nous aider, les mesures de détection vont fonctionner, SCIR.Beta = 0.1, la 2ème vague surviendra vers Octobre-Novembre avec une intensité 3 fois moins forte que la 1ère</li>
 </ul>
-Ci dessous le scénario péssimiste et médian
+Ci dessous le scénario péssimiste avec un SCIR.Beta à 1 au lieu de 0.3
 <img src="data/scirbad.png">
+Ci dessous le scénario optimiste avec un SCIR.Beta à 0.1
 <img src="data/scirgood.png">
     
 
