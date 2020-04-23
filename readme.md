@@ -16,7 +16,7 @@
 <p>En date du 24/04</p>
 <p>A la date du déconfinement le 11 mai (J128)
 <ul>
-    <li>le nombre de nouveaux cas sera quasi nul!<li>
+    <li>le nombre de nouveaux cas sera quasi nul!</li>
     <li>Il y aura 150000 cas confirmés</li>
     <li>Il y aura 23000 morts</li>
     <li>Il y aura 4.4 millions de personnes infectées</li>
@@ -24,7 +24,7 @@
 </ul>
 <p>En Auvergne Rhône-Alpes à la date du déconfinement le 11 mai (Jour 128)
 <ul>
-    <li>le nombre de nouveaux cas sera quasi nul!<li>
+    <li>le nombre de nouveaux cas sera quasi nul!</li>
     <li>Il y aura 1200 morts</li>
     <li>Il y aura 0.3 millions de personnes infectées</li>
     <li>Le taux d'infection sera de 3%</li>
