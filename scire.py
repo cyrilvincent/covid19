@@ -87,7 +87,7 @@ if __name__ == '__main__':
     I0 = C0 / 6  # Taux Infection
     S0 = 1 - I0 - C0  # Taux Sain
     scire = SCIRE(S0, C0, I0, beta=beta * 0.25) # 0.99 0.25 0.1
-    scires = scire.compute(250)  # 250 pointe à 1300000 infectés, 260000 réa, 500000 morts en 250 jours, pointe à 13000 morts/jour
+    scires = scire.compute(250)
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])
     i = np.array([x.I for x in scires])

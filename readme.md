@@ -1,12 +1,12 @@
 <h1>Etude du Covid19 en France par Machine Learning</h1>
 <p>Par Cyril Vincent</p>
-<p>Etant expert en IA et Machine Learning, j'ai mener une étude disponible sur le site santepubliquefrance.fr</p>
-<p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vos rien!!</p>
+<p>Etant expert en IA et Machine Learning, j'ai mené une étude sur les données COVID disponible sur le site santepubliquefrance.fr</p>
+<p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
-<p>J'ai utilisé le framewrok Scikit-Learn pour analyser les données. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
+<p>J'ai utilisé le framework Scikit-Learn pour analyser les données. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
 <p>J'ai également utilisé le modèle SCIRE, dispo sur https://interstices.info/modeliser-la-propagation-dune-epidemie
+<p>Le tout a été programmé en 4h</p>
 <img src="data/scir.png">
-</p>
 <p>J'ai créer 5 modèles en incluant les données de :
     <ul>
         <li>à partir de J0 : le premier cas est diagnostiqué le 24/01, le modèle est peu fiable car les données de départ sont constantes</li>
