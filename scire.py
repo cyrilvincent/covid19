@@ -5,7 +5,7 @@ import numpy as np
 import functools
 
 #https://interstices.info/modeliser-la-propagation-dune-epidemie/
-# Sain Contaminé Infecté Rétabli
+#Sain Contaminé Infecté Rétabli
 class SCIRE:
 
     def __init__(self, S0 = 1, C0 = 0, I0 = 0, r0 = 3.3, v = 5.1, lmbda = 15, mu = 0.005):
@@ -59,12 +59,12 @@ if __name__ == '__main__':
     print(beta)
     mu = 0.005 # Taux mortalité
     scire = SCIRE(S0,C0,I0,r0=R0,v=v,lmbda=lmbda,mu=mu)
-    scires = scire.compute(250) #45-15 ou #250 pointe à 1300000 infectés, 260000 réa, 500000 morts en 250 jours, pointe à 13000 morts/jour
+    scires = scire.compute(250) #45-15 250
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])
     i = np.array([x.I for x in scires])
     dc = np.array([x.DC for x in scires])
-    #plt.plot(ctot*nbfrench, label="Contact avec virus")
+    plt.plot(ctot*nbfrench, label="Contact avec virus")
     plt.plot(i*nbfrench, label="Infectés")
     plt.plot(dc*nbfrench, label="Décès")
     plt.legend()
