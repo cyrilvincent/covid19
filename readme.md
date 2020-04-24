@@ -19,7 +19,7 @@
 <img src="data/figure.png"/>
 <p>En date du 24/04</p>
 <p>Sans confinement, ni mesure de distanciation, les chiffres étaient catastrophiques
-<p>Ci dessous l'état des lieux à la date du confinement d45 qui permete d'établire SCIRE.Beta = 0.22
+<p>Ci dessous l'état des lieux à la date du confinement d45 qui permet d'établire SCIRE.Beta = 0.22
 <img src="data/figure45.png">
 Le scénario suivant se serait alors produit
 <img src="data/figure250.png">
