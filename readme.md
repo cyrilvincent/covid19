@@ -5,8 +5,9 @@
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
 <p>J'ai utilisé le framework Scikit-Learn pour analyser les données. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
 <p>J'ai également programmé le modèle SCIRE d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
-<p>Le tout a été programmé en 4h</p>
 <img src="data/scir.png">
+<p>Le tout a été programmé en 4h</p>
+<p>Ces modèles existent depuis + de 10 ans et toutes les données du SCIRE étaient déjà disponible avant la mi-février</p>
 <p>J'ai créé 4 modèles en incluant les données :
     <ul>
         <li>à partir de J0 : le premier cas est diagnostiqué le 24/01, le modèle est peu fiable car les données de départ sont constantes</li>
@@ -14,7 +15,7 @@
         <li>à partir du J41, la veille du jour où l'épidémie commence à décollée, passage de 92 à 276 cas</li>
         <li>à partir du 1er jour du confinement, J56</li>
     </ul>
-<p>J'ai ensuite créé les modèles SCIRE et de Machine Learning (ML) avec un polynôme de degré 4.</p>
+<p>J'ai ensuite créé les modèles SCIRE et Machine Learning (ML) avec une regréssion polynômiale ridge de degré 4.</p>
 <img src="data/figure.png"/>
 <p>En date du 24/04</p>
 <p>Sans confinement, ni mesure de distanciation, les chiffres sont catastrophiques
@@ -50,28 +51,28 @@
     <ul>
         <li>D'après le modèle SCIRE, un pic d'infection très bref à j+5, puis le virus disparait assez rapidement à J+60</li>
         <li>D'après le modèle ML, le virus quasi disparait immédiatement</li>
-        <li>&lt;25000 décès</li>
+        <li>&lt;25000 décès au total</li>
     </ul>
     <img src="data/figured1.png">
 <p>Scénario pessimiste: le confinement est un échèc, SCIRE.Beta inchangé
     <ul>
         <li>Reconfinement à J+23</li>
         <li>Un énorme pic d'infection à J+50 si aucun reconfinement</li>
-        <li>40000 décès avec reconfinement, 500000 sans</li>
+        <li>40000 décès au total avec reconfinement, 500000 sans</li>
     </ul>
     <img src="data/figured2.png">
 <p>Scénario médian: les mesures de protection fonctionnent, SCIRE.Beta est divisé par 4
     <ul>
         <li>Un second pic à J+8 puis un 3ème en Octobre - Novembre</li>
-        <li>D'après le modèle SCIRE, 70000 décès sur 250 jours</li>
-        <li>D'après le modèle ML, 27000 décès sur 250 jours</li>
+        <li>D'après le modèle SCIRE, 70000 décès au total sur 250 jours</li>
+        <li>D'après le modèle ML, 27000 décès au total sur 250 jours</li>
         <li>Entre 1.2 et 3 fois plus de personnes contaminées mais sur 7 mois</li>
         <li>Un taux d'immunisation de 9% à 21% en fin d'année</li>
     </ul>
 <p>Scénario médian-pessimiste: les mesures de protection fonctionnent moyennement, SCIRE.Beta est divisé par 2
     <ul>
         <li>Grande divergence entre les modèles</li>
-        <li>Un second pic à J+70 ou J+180 aussi important que le précédent mais plus étalé, soit en été soit à l'automne</li>
+        <li>Un second pic à J+70 et/ou J+180 aussi important que le précédent mais plus étalé, soit en été soit à l'automne</li>
         <li>Le nombre de décès sur 250 jours varie de 27000 à 300000!</li>
     </ul>
 <p>La moindre variation d'un paramètre peut complètement modifier l'évolution de l'épidémie, ma conclusion est donc de rester modeste</p>
