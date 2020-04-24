@@ -69,6 +69,7 @@
         <li>Entre 1.2 et 2 fois plus de personnes contaminées mais sur 7 mois</li>
         <li>Un taux d'immunisation de 9% à 14% en fin d'année</li>
     </ul> 
+<p>La moindre variation d'un paramètre peut complètement modifier l'évolution de l'épidémie, ma conclusion est donc de rester modeste</p>
 
 Il faudra attendre 2.5 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la population ayant été infectée par le virus
 
