@@ -21,7 +21,7 @@
 <p>Sans confinement, ni mesure de distanciation, les chiffres étaient catastrophiques
 <p>Ci dessous l'état des lieux à la date du confinement d45 qui permet d'établire SCIRE.Beta = 0.22
 <img src="data/figure45.png">
-Le scénario suivant se serait alors produit
+<p>Le scénario suivant se serait alors produit
 <img src="data/figure250.png">
 <ul>
     <li>1.3 millions d'infection</li>
