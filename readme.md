@@ -4,9 +4,9 @@
 <p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
 <p>J'ai utilisé le framework Scikit-Learn pour analyser les données. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
-<p>J'ai également programmé le modèle SCIRE (Sain-Contaminé-Infecté-Rétablie-Etendue) avec mofdification d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
+<p>J'ai également programmé le modèle SCIRE (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
 <img src="data/scir.png">
-<p>Le tout a été programmé en 4h, le code est disponible ci-dessus, le modèle SCIRE fait moins de 50 lignes</p>
+<p>Le tout a été programmé en 5h, le code est disponible ci-dessus, le modèle SCIRE fait moins de 50 lignes</p>
 <p>Ces modèles existent depuis + de 10 ans et toutes les données du SCIRE étaient déjà disponible avant la mi-février, pourquoi ne pas les avoir montrées avant ?</p>
 <p>J'ai créé 4 modèles en incluant les données :
     <ul>
@@ -45,12 +45,12 @@
     <li>0.3 millions de personnes ayant été infectées</li>
     <li>Taux d'infection de 3%</li>
 </ul>
-<p>Au déconfinement, je propose 4 scénarios, pour celà j'ai modifié SCIRE pour ajouter un taux de détection et un taux d'atténuation dû à l'éré R = R * (1 - DetectionRate) * SummerRate
+<p>Au déconfinement, je propose 4 scénarios, pour celà j'ai modifié SCIRE pour ajouter un taux de détection et un taux d'atténuation dû à l'éré R = R * DetectionRate * SummerRate
 <p>Scénario optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.1 * 0.1 = 0.03
     <ul>
         <li>Un petit pic arrive à J+5</li>
         <li>Le virus s'éteint entre 0 et 50 jours</li>
-        <li>23000 décès au total</li>
+        <li>24000 décès au total</li>
     </ul>
     <img src="data/figured1.png">
 <p>Scénario pessimiste: le confinement est un échèc, R=R0, peu probable car ne se produit pas ailleurs dans le monde
@@ -62,18 +62,18 @@
 <p>Scénario médian: les mesures de protection fonctionnent avec 90% de détection, isolement des patients I, protections, un été protecteur, R=R0*0.1*0.5=0.16
     <ul>
         <li>Une petite reprise rapide, un été clément</li>
-        <li>Un second pic modeste à l'automne, entre 24000 et 40000 décès en fonction de l'intensité du 2ème pic</li>
+        <li>Un second pic modeste à l'automne, entre 24000 et 30000 décès en fonction de l'intensité du 2ème pic</li>
     </ul>
     <img src="data/figured3.png">
 <p>Scénario médian-pessimiste: les mesures de protection fonctionnent moyennement ou déconfinement trop rapide, R=R0*0.5*0.5=0.83
     <ul>
         <li>Divergence entre les modèles</li>
-        <li>D'après le modèle SCIRE, un second pic entre Juillet et Novembre, reconfinement possible, 200000 décès possible</li>
+        <li>D'après le modèle SCIRE, un second pic entre Juillet et Novembre, reconfinement possible, + de 50000 décès</li>
         <li>D'après le modèle ML, un second pic à l'automne mais plus étalé qu'au printemps, 40000 à 50000 décès</li>
     </ul>
     <img src="data/figured4.png">
-<p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, le ML ne possède pas assez données pour être fiable, ma conclusion est donc de rester modeste</p>
-<p>Conclusion générale : les modèles sont très incertains, le paramètre R reflète l'interaction entre les personnes, le confinement l'a diminué d'un facteur 7, d'autres mesures comme les protections et les détections massives arrivent à un résultat proche, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va vite refluée si les moyens de détection fonctionnent et sont massifs, le risque de 2ème vague à l'automne est très fort mais peu quantifiable pour le moment.</p>
+<p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, le ML ne possède pas assez données pour être fiable, il faut donc rester modeste</p>
+<p>Conclusion générale : les modèles sont très incertains, une boule de cristale ferait aussi bien, le paramètre R reflète l'interaction entre les personnes, le confinement l'a diminué d'un facteur 7, d'autres mesures comme les protections et les détections massives arrivent à un résultat proche, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va vite refluée si les moyens de détection fonctionnent et sont massifs, le risque de 2ème vague à l'automne est très fort mais peu quantifiable pour le moment.</p>
 <p>Comme le montre le sud de la France et l'Afrique, les temps ensoleillés, secs et chauds semblent diminuer fortement R, donc soyons optimiste</p>
 
 Il faudra attendre 2 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la population ayant été infectée par le virus, sauf si un vaccin efficace et disponible arrive avant

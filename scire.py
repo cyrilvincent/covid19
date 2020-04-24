@@ -14,7 +14,7 @@ class SCIRE:
         self.I = I0
         self.R = R0
         self.DC = 0
-        self.beta = r0 / (lmbda / v)
+        self.beta = r0 / lmbda
         self.v = v
         self.lmbda = lmbda
         self.mu = mu
@@ -80,7 +80,7 @@ if __name__ == '__main__':
     scire = SCIRE(S0, C0, I0, r0=0.5,v=v,lmbda=lmbda,mu=mu)
     scires = scire.compute(91-45)
     i = np.array([x.I for x in scires])
-    dc = np.array([x.DC for x in scires]) + 2281 / nbfrench
+    dc = np.array([x.DC for x in scires]) + DC45 / nbfrench
     plt.plot(i * nbfrench, label="Infectés")
     plt.plot(dc * nbfrench, label="Décès")
     plt.legend()
@@ -99,7 +99,7 @@ if __name__ == '__main__':
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])
     i = np.array([x.I for x in scires])
-    dc = np.array([x.DC for x in scires]) + 23000 / nbfrench
+    dc = np.array([x.DC for x in scires]) + DC128 / nbfrench
     plt.plot(i * nbfrench, label="Infectés")
     plt.plot(dc * nbfrench, label="Décès")
     plt.legend()
