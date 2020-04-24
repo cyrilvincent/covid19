@@ -8,7 +8,7 @@ import functools
 # Sain Contaminé Infecté Rétabli
 class SCIRE:
 
-    def __init__(self, S0 = 1, C0 = 0, I0 = 0, r0 = 3.3, v = 5.1, lmbda = 15, mu = 0.01):
+    def __init__(self, S0 = 1, C0 = 0, I0 = 0, r0 = 3.3, v = 5.1, lmbda = 15, mu = 0.005):
         self.S = S0
         self.C = C0
         self.I = I0
