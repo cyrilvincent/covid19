@@ -8,11 +8,11 @@ import functools
 #Sain Contaminé Infecté Rétabli Etendu
 class SCIRE:
 
-    def __init__(self, S0 = 1, C0 = 0, I0 = 0, r0 = 3.3, v = 5.1, lmbda = 15, mu = 0.005):
+    def __init__(self, S0 = 1, C0 = 0, I0 = 0, R0 = 0, r0 = 3.3, v = 2, lmbda = 15, mu = 0.005):
         self.S = S0
         self.C = C0
         self.I = I0
-        self.R = 0
+        self.R = R0
         self.DC = 0
         self.beta = r0 / (lmbda / v)
         self.v = v
@@ -48,12 +48,13 @@ class SCIRE:
 
 if __name__ == '__main__':
     nbfrench = 67000000
-    I0 = 10 / nbfrench #Taux Infection
-    C0 = I0 * 4 #Taux Contaminé
+    DC15 = 10
+    TxNotDetected = 4
+    I0 = DC15 / nbfrench #Taux Infection
+    C0 = I0 * TxNotDetected #Taux Contaminé
     S0 = 1 - I0 - C0 #Taux Sain
-    beta = 0.22
-    lmbda = 15 # Durée d'infection
-    v = 2 # Nb incubation non contagieux
+    lmbda = 15 # Durée d'infection contagieuse
+    v = 2 # Durée incubation non contagieux
     R0 = 3.3
     beta  = R0 / lmbda
     print(beta)
@@ -71,13 +72,13 @@ if __name__ == '__main__':
     plt.show()
 
     # Confinement
-    I0 = 2281 * 10 / nbfrench #Taux Infection
-    C0 = I0 * 6 #Taux Contaminé
+    DC45 = 2281
+    I0 = (DC45 / mu) / nbfrench #Taux Infection
+    TxNotDetected = 6
+    C0 = I0 * TxNotDetected #Taux Contaminé
     S0 = 1 - I0 - C0 #Taux Sain
     scire = SCIRE(S0, C0, I0, r0=0.5,v=v,lmbda=lmbda,mu=mu)
     scires = scire.compute(91-45)
-    ctot = 1 - np.array([x.S for x in scires])
-    c = np.array([x.C for x in scires])
     i = np.array([x.I for x in scires])
     dc = np.array([x.DC for x in scires]) + 2281 / nbfrench
     plt.plot(i * nbfrench, label="Infectés")
@@ -86,10 +87,14 @@ if __name__ == '__main__':
     plt.show()
 
     # Déconfinement
-    C0 = ((23000 * 100) - 180000) / nbfrench  # Taux Contaminé
-    I0 = C0 / 6  # Taux Infection
+    DC128 = 23000
+    R128 = 180000
+    detectionrate = 0.5 # 1 0.5 0.1
+    summerrate = 0.5 # 1 0.5 0.1
+    C0 = ((DC128 / mu) - R128) / nbfrench * detectionrate
+    I0 = C0 / TxNotDetected # Taux Infection
     S0 = 1 - I0 - C0  # Taux Sain
-    scire = SCIRE(S0, C0, I0, r0=1,v=v,lmbda=lmbda,mu=mu) #R0,0.01,R0*0.1,1
+    scire = SCIRE(S0, C0, I0, r0=R0 * detectionrate * summerrate,v=v,lmbda=lmbda,mu=mu) #R0,0.01,R0*0.1,1
     scires = scire.compute(250)
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])

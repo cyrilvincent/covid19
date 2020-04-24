@@ -45,12 +45,12 @@
     <li>0.3 millions de personnes ayant été infectées</li>
     <li>Taux d'infection de 3%</li>
 </ul>
-<p>Au déconfinement, je propose 4 scénarios
-<p>Scénario optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R=0.01
+<p>Au déconfinement, je propose 4 scénarios, pour celà j'ai modifié SCIRE pour ajouter un taux de détection et un taux d'atténuation dû à l'éré R = R * (1 - DetectionRate) * SummerRate
+<p>Scénario optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.1 * 0.1 = 0.03
     <ul>
-        <li>D'après le modèle SCIRE, un pic d'infection très bref, puis le virus disparait assez rapidement à J+50</li>
-        <li>D'après le modèle ML, le virus disparait immédiatement</li>
-        <li>Entre 23000 et 27000 décès au total</li>
+        <li>Un petit pic arrive à J+5</li>
+        <li>Le virus s'éteint entre 0 et 50 jours</li>
+        <li>23000 décès au total</li>
     </ul>
     <img src="data/figured1.png">
 <p>Scénario pessimiste: le confinement est un échèc, R=R0, peu probable car ne se produit pas ailleurs dans le monde
@@ -59,13 +59,13 @@
         <li>40000 décès au total avec reconfinement, 500000 sans</li>
     </ul>
     <img src="data/figured2.png">
-<p>Scénario médian: les mesures de protection fonctionnent avec 90% de détection, isolement des patients I, protections, un été protecteur, R=R0*0.1
+<p>Scénario médian: les mesures de protection fonctionnent avec 90% de détection, isolement des patients I, protections, un été protecteur, R=R0*0.1*0.5=0.16
     <ul>
         <li>Une petite reprise rapide, un été clément</li>
-        <li>Un second pic modeste à l'automne, <40000 décès au total sur 250 jours</li>
+        <li>Un second pic modeste à l'automne, entre 24000 et 40000 décès en fonction de l'intensité du 2ème pic</li>
     </ul>
     <img src="data/figured3.png">
-<p>Scénario médian-pessimiste: les mesures de protection fonctionnent moyennement ou déconfinement trop rapide, R = 1
+<p>Scénario médian-pessimiste: les mesures de protection fonctionnent moyennement ou déconfinement trop rapide, R=R0*0.5*0.5=0.83
     <ul>
         <li>Divergence entre les modèles</li>
         <li>D'après le modèle SCIRE, un second pic entre Juillet et Novembre, reconfinement possible, 200000 décès possible</li>
@@ -73,7 +73,7 @@
     </ul>
     <img src="data/figured4.png">
 <p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, le ML ne possède pas assez données pour être fiable, ma conclusion est donc de rester modeste</p>
-<p>Comme le montre le sud de la France et l'Afrique, les temps secs et chaud semble diminuer fortement R, donc soyons optimiste</p>
+<p>Comme le montre le sud de la France et l'Afrique, les temps ensoleillés, secs et chauds semblent diminuer fortement R, donc soyons optimiste</p>
 
 Il faudra attendre 2 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la population ayant été infectée par le virus, sauf si un vaccin efficace et disponible arrive avant
 
