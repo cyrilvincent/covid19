@@ -86,12 +86,12 @@ if __name__ == '__main__':
     C0 = ((23000 * 100) - 180000) / nbfrench  # Taux Contaminé
     I0 = C0 / 6  # Taux Infection
     S0 = 1 - I0 - C0  # Taux Sain
-    scire = SCIRE(S0, C0, I0, beta=beta * 0.25) # 0.99 0.25 0.1
+    scire = SCIRE(S0, C0, I0, beta=beta * 0.5) # 0.99 0.25 0.1
     scires = scire.compute(250)
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])
     i = np.array([x.I for x in scires])
-    dc = np.array([x.DC for x in scires]) + 2281 / nbfrench
+    dc = np.array([x.DC for x in scires]) + 23000 / nbfrench
     plt.plot(i * nbfrench, label="Infectés")
     plt.plot(dc * nbfrench, label="Décès")
     plt.legend()
