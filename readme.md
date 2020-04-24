@@ -4,8 +4,8 @@
 <p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vos rien!!</p>
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
 <p>J'ai utilisé le framewrok Scikit-Learn pour analyser les données. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
-<p>J'ai également utilisé le modèle SCIR, dispo sur https://interstices.info/modeliser-la-propagation-dune-epidemie
-<img src="data/scir.png">
+<p>J'ai également utilisé le modèle SCIRE, dispo sur https://interstices.info/modeliser-la-propagation-dune-epidemie
+<img src="data/SCIRE.png">
 </p>
 <p>J'ai créer 5 modèles en incluant les données de :
     <ul>
@@ -13,12 +13,26 @@
         <li>à partir de 10 cas (J15) : le modèle est encore trop peu fiable car le stade 1 de l'épidémie en France était trop différent du stade 2</li>
         <li>à partir du J41, la veille du jour où l'épidémie commence à décoller, passage de 92 à 276 cas</li>
         <li>à partir du 1er jour du confinement, J56</li>
-        <li>le modèle de propagation SCIR pour l'après déconfinement</li>
+        <li>le modèle de propagation SCIRE pour l'après déconfinement</li>
     </ul>
-<p>Ces deux derniers modèles sont les plus fiables, les meilleurs résultats sont obtenus avec avec une régression polynomiale de degrés 4</p>
+<p>Ces deux derniers modèles sont les plus fiables, les meilleurs résultats sont obtenus avec avec une régression polynomiale de degrés 4 et un SCIRE</p>
 <img src="data/figure.png"/>
 <p>En date du 24/04</p>
-<p>A la date du déconfinement le 11 mai (J128), le modèle nous donne des chiffres assez optimistes mais avec <b>une RValue (score) trop faible pour que ces chiffres soient fiables</b>
+<p>Sans confinement, ni mesure de distanciation, les chiffres étaient catastrophiques
+Ci dessous l'état des lieux à la date du confinement d45 qui permete d'établire SCIRE.Beta = 0.22
+<img src="data/figure45.png">
+Le scénario suivant se serait alors produit
+<img src="data/figure250.png">
+<ul>
+    <li>1.3 millions d'infection</li>
+    <li>0.5 millions de décès en 250 jours avec le nombre de lit en réanimation adéquat</li>
+    <li>0.75 millions de décès en 250 jours pour 5000 lits de réanimation</li>
+    <li>Une pointe à 13000 morts en une journée avec le nombre de lit en réanimation nécessaire</li>
+    <li>Une pointe à 19000 morts en une journée pour 5000 lits de réanimation</li>
+    <li></li>
+</ul>
+
+<p>A la date du déconfinement le 11 mai (J128), le modèle ML nous donne des chiffres assez optimistes mais avec <b>une RValue (score) trop faible pour que ces chiffres soient fiables</b>
 <ul>
     <li>le nombre de nouveaux cas sera quasi nul!</li>
     <li>Il y aura 150000 cas confirmés</li>
@@ -33,18 +47,38 @@
     <li>Il y aura 0.3 millions de personnes ayant été infectées</li>
     <li>Le taux d'infection sera de 3%</li>
 </ul>
-D'après les différents scenarios de modélisation, il y a 3 possibilités dans les mois à venir, dépendant du paramètre SCIR.Beta qui définit le coeficiant R après les mesures gouvernementale (porte du masque, détection, ...) :
-<ul>
-    <li>Scénario optimiste: SCIR.Beta = <0.1, comme le SRAS, le virus disparait en Juin, 23000 décès</li>
-    <li>Scénario pessimiste, SCIR.Beta = 0.3, R0 = 4, le déconfinement est un échec, la 2ème vague reprend 26 jours après soit début Juin avec un confinement mi-juin, + 50000 décès</li>
-    <li>Scénario médian, l'été va nous aider, les mesures de détection vont fonctionner, SCIR.Beta = 0.1, le virus sera présent très faiblement pendant l'été, la 2ème vague surviendra vers Octobre-Novembre avec une intensité 3 fois moins forte que la 1ère, moins de 30000 décès</li>
+<p>Au déconfinement, le modèle SCIRE nous propose 3 scénarios
+<p>Scénario optimiste: Comme le SRAS, le virus quasi disparait, SCIRE.Beta = 0.01
+    <ul>
+        <li>Un pic d'infection très bref à j+5, puis le virus quasi disparait à J+60</li>
+        <li>23000 décès</li>
+    </ul>
+    <img src="data.figured1.png">
+<p>Scénario pessimiste: le confinement est un échèc, SCIRE.Beta inchangé
+    <ul>
+        <li>Reconfinement à J+23</li>
+        <li>Un énorme pic d'infection très bref à j+50 si aucun reconfinement</li>
+        <li>40000 décès avec reconfinement, 500000 sans</li>
+    </ul>
+    <img src="data.figured2.png">
+<p>Scénario médian: les mesures de protection fonctionnent, SCIRE.Beta est divisé par 4
+    <ul>
+        <li>Un second pic à J+8 puis un 3ème en Octobre - Novembre</li>
+        <li>44000 décès sur 250 jours</li>
+        <li>2 fois plus de personnes contaminées mais sur 7 mois</li>
+        <li>Un taux d'immunisation de 14% en fin d'année</li>
+    </ul>
+    <img src="data.figured3.png">  
+
+    <li>Scénario pessimiste, SCIRE.Beta = 0.3, R0 = 4, le déconfinement est un échec, la 2ème vague reprend 26 jours après soit début Juin avec un confinement mi-juin, + 50000 décès</li>
+    <li>Scénario médian, l'été va nous aider, les mesures de détection vont fonctionner, SCIRE.Beta = 0.1, le virus sera présent très faiblement pendant l'été, la 2ème vague surviendra vers Octobre-Novembre avec une intensité 3 fois moins forte que la 1ère, moins de 30000 décès</li>
     <li>Scénario médian pessimiste, après le déconfinement, le virus reprendra avec des taux comme aujourd'hui avec 50 décès par jour pendant 1 ans, soit 40000 à 50000 décès.</li>
 </ul>
 Il faudra attendre 2.5 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la population ayant été infectée par le virus
-Ci dessous le scénario péssimiste avec un SCIR.Beta à 1 au lieu de 0.3
-<img src="data/scirbad.png">
-Ci dessous le scénario optimiste avec un SCIR.Beta à 0.1
-<img src="data/scirgood.png">
+Ci dessous le scénario péssimiste avec un SCIRE.Beta à 1 au lieu de 0.3
+<img src="data/SCIREbad.png">
+Ci dessous le scénario optimiste avec un SCIRE.Beta à 0.1
+<img src="data/SCIREgood.png">
     
 
 
