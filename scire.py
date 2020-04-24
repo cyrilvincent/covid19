@@ -5,7 +5,7 @@ import numpy as np
 import functools
 
 #https://interstices.info/modeliser-la-propagation-dune-epidemie/
-#Sain Contaminé Infecté Rétabli
+#Sain Contaminé Infecté Rétabli Etendu
 class SCIRE:
 
     def __init__(self, S0 = 1, C0 = 0, I0 = 0, r0 = 3.3, v = 5.1, lmbda = 15, mu = 0.005):
