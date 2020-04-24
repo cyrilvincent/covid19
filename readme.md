@@ -15,7 +15,7 @@
         <li>à partir du 1er jour du confinement, J56</li>
         <li>le modèle de propagation SCIRE pour l'après déconfinement</li>
     </ul>
-<p>Ces deux derniers modèles sont les plus fiables, les meilleurs résultats sont obtenus avec avec une régression polynomiale de degrés 4, appelé ML et un SCIRE</p>
+<p>Ces deux derniers modèles sont les plus fiables, les meilleurs résultats sont obtenus avec avec une régression polynomiale de degrés 4, appelé ML et un SCIRE. Ci dessous le modèle ML.</p>
 <img src="data/figure.png"/>
 <p>En date du 24/04</p>
 <p>Sans confinement, ni mesure de distanciation, les chiffres étaient catastrophiques
