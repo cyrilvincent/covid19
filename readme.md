@@ -5,7 +5,7 @@
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
 <p>J'ai utilisé le framewrok Scikit-Learn pour analyser les données. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
 <p>J'ai également utilisé le modèle SCIRE, dispo sur https://interstices.info/modeliser-la-propagation-dune-epidemie
-<img src="data/SCIRE.png">
+<img src="data/scire.png">
 </p>
 <p>J'ai créer 5 modèles en incluant les données de :
     <ul>
