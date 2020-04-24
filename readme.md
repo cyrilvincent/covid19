@@ -53,14 +53,14 @@ Le scénario suivant se serait alors produit
         <li>Un pic d'infection très bref à j+5, puis le virus quasi disparait à J+60</li>
         <li>23000 décès</li>
     </ul>
-    <img src="data.figured1.png">
+    <img src="data/figured1.png">
 <p>Scénario pessimiste: le confinement est un échèc, SCIRE.Beta inchangé
     <ul>
         <li>Reconfinement à J+23</li>
         <li>Un énorme pic d'infection très bref à j+50 si aucun reconfinement</li>
         <li>40000 décès avec reconfinement, 500000 sans</li>
     </ul>
-    <img src="data.figured2.png">
+    <img src="data/figured2.png">
 <p>Scénario médian: les mesures de protection fonctionnent, SCIRE.Beta est divisé par 4
     <ul>
         <li>Un second pic à J+8 puis un 3ème en Octobre - Novembre</li>
@@ -68,7 +68,7 @@ Le scénario suivant se serait alors produit
         <li>2 fois plus de personnes contaminées mais sur 7 mois</li>
         <li>Un taux d'immunisation de 14% en fin d'année</li>
     </ul>
-    <img src="data.figured3.png">  
+    <img src="data/figured3.png">  
 
     <li>Scénario pessimiste, SCIRE.Beta = 0.3, R0 = 4, le déconfinement est un échec, la 2ème vague reprend 26 jours après soit début Juin avec un confinement mi-juin, + 50000 décès</li>
     <li>Scénario médian, l'été va nous aider, les mesures de détection vont fonctionner, SCIRE.Beta = 0.1, le virus sera présent très faiblement pendant l'été, la 2ème vague surviendra vers Octobre-Novembre avec une intensité 3 fois moins forte que la 1ère, moins de 30000 décès</li>
