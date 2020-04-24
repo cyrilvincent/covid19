@@ -57,7 +57,7 @@ Le scénario suivant se serait alors produit
 <p>Scénario pessimiste: le confinement est un échèc, SCIRE.Beta inchangé
     <ul>
         <li>Reconfinement à J+23</li>
-        <li>Un énorme pic d'infection très bref à j+50 si aucun reconfinement</li>
+        <li>Un énorme pic d'infection à j+50 si aucun reconfinement</li>
         <li>40000 décès avec reconfinement, 500000 sans</li>
     </ul>
     <img src="data/figured2.png">
@@ -67,18 +67,10 @@ Le scénario suivant se serait alors produit
         <li>44000 décès sur 250 jours</li>
         <li>2 fois plus de personnes contaminées mais sur 7 mois</li>
         <li>Un taux d'immunisation de 14% en fin d'année</li>
-    </ul>
-    <img src="data/figured3.png">  
+    </ul> 
 
-    <li>Scénario pessimiste, SCIRE.Beta = 0.3, R0 = 4, le déconfinement est un échec, la 2ème vague reprend 26 jours après soit début Juin avec un confinement mi-juin, + 50000 décès</li>
-    <li>Scénario médian, l'été va nous aider, les mesures de détection vont fonctionner, SCIRE.Beta = 0.1, le virus sera présent très faiblement pendant l'été, la 2ème vague surviendra vers Octobre-Novembre avec une intensité 3 fois moins forte que la 1ère, moins de 30000 décès</li>
-    <li>Scénario médian pessimiste, après le déconfinement, le virus reprendra avec des taux comme aujourd'hui avec 50 décès par jour pendant 1 ans, soit 40000 à 50000 décès.</li>
-</ul>
 Il faudra attendre 2.5 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la population ayant été infectée par le virus
-Ci dessous le scénario péssimiste avec un SCIRE.Beta à 1 au lieu de 0.3
-<img src="data/SCIREbad.png">
-Ci dessous le scénario optimiste avec un SCIRE.Beta à 0.1
-<img src="data/SCIREgood.png">
+
     
 
 
