@@ -53,7 +53,7 @@ if __name__ == '__main__':
     S0 = 1 - I0 - C0 #Taux Sain
     beta = 0.22
     lmbda = 15 # Durée d'infection
-    v = 5.1 # Nb incubation
+    v = 2 # Nb incubation non contagieux
     R0 = 3.3
     beta  = R0 / lmbda
     print(beta)
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     C0 = ((23000 * 100) - 180000) / nbfrench  # Taux Contaminé
     I0 = C0 / 6  # Taux Infection
     S0 = 1 - I0 - C0  # Taux Sain
-    scire = SCIRE(S0, C0, I0, r0=0.5,v=v,lmbda=lmbda,mu=mu)
+    scire = SCIRE(S0, C0, I0, r0=1,v=v,lmbda=lmbda,mu=mu) #R0,0.01,R0*0.1,1
     scires = scire.compute(250)
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])

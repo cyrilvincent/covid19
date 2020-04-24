@@ -18,20 +18,19 @@
 <p>J'ai ensuite créé les modèles SCIRE et Machine Learning (ML) avec une regréssion polynômiale ridge de degré 4.</p>
 <img src="data/figure.png"/>
 <p>En date du 24/04</p>
-<p>Sans confinement, ni mesure de distanciation, les chiffres sont catastrophiques
 <p>Ci dessous l'état des lieux à la date du confinement J45 qui permet de trouver R0 = 4.2 au lieu de 3.3 admis aujourd'hui, le virus serait donc 25% plus virulent suivant mon modèle
 <img src="data/figure45.png">
-<p>Sans mesure de protection, le scénario suivant se serait alors produit
+<p>Sans confinement, ni protection, ni mesure de distanciation, les chiffres sont catastrophiques
 <img src="data/figure250.png">
 <ul>
     <li>1.3 millions d'infection</li>
-    <li>0.5 millions de décès en 250 jours avec le nombre de lit en réanimation adéquat</li>
-    <li>0.75 millions de décès en 250 jours pour 5000 lits de réanimation</li>
-    <li>Une pointe à 13000 morts en une journée avec le nombre de lit en réanimation nécessaire</li>
-    <li>Une pointe à 19000 morts en une journée pour 5000 lits de réanimation</li>
+    <li>250000 décès en 250 jours avec le nombre de lit en réanimation adéquat</li>
+    <li>+300000 décès en 250 jours pour 5000 lits de réanimation</li>
+    <li>Une pointe à 15000 morts par jour avec le nombre de lit en réanimation nécessaire</li>
+    <li>Une pointe à 20000 morts par jour pour 5000 lits de réanimation</li>
 </ul>
 
-<p>A la date du déconfinement le 11 mai (J128), le modèle ML nous donne des chiffres assez optimistes mais avec <b>une RValue (score) trop faible pour que ces chiffres soient fiables</b>
+<p>A la date du déconfinement le 11 mai (J128), le modèle ML nous donne des chiffres assez optimistes mais avec <b>une RValue (score) trop faible pour que ces chiffres soient fiables</b>, de plus le modèle SCIRE ne fonctionne pas car R varie pendant cette période, le taux d'erreur est donc énorme</b>
 <ul>
     <li>Nombre de nouveaux cas sera quasi nul!</li>
     <li>150000 cas confirmés</li>
@@ -49,9 +48,9 @@
 <p>Au déconfinement, le modèle SCIRE nous propose 4 scénarios
 <p>Scénario optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus quasi disparait, R=0.01
     <ul>
-        <li>D'après le modèle SCIRE, un pic d'infection très bref à J+6, puis le virus disparait assez rapidement à J+50</li>
-        <li>D'après le modèle ML, le virus quasi disparait immédiatement</li>
-        <li>Entre 23000 et 38000 décès au total</li>
+        <li>D'après le modèle SCIRE, un pic d'infection très bref, puis le virus disparait assez rapidement à J+50</li>
+        <li>D'après le modèle ML, le virus disparait immédiatement</li>
+        <li>Entre 23000 et 27000 décès au total</li>
     </ul>
     <img src="data/figured1.png">
 <p>Scénario pessimiste: le confinement est un échèc, R=R0, peu probable car ne se produit pas ailleurs dans le monde
@@ -60,18 +59,19 @@
         <li>40000 décès au total avec reconfinement, 500000 sans</li>
     </ul>
     <img src="data/figured2.png">
-<p>Scénario médian: les mesures de protection fonctionnent avec 90% de détection, isolement, un été protecteur, R=0.1
+<p>Scénario médian: les mesures de protection fonctionnent avec 90% de détection, isolement, un été protecteur, R=R0*0.1
     <ul>
-        <li>D'après SCIRE, un petit pic en Juin, un été clément, un second pic modeste à l'automne, 43000 décès au total sur 250 jours</li>
-        <li>D'après le modèle ML, un été très clément, un second petit pic à l'automne, 30000 décès au total sur 250 jours</li>
+        <li>Une petite reprise rapide, un été clément</li>
+        <li>Un second pic modeste à l'automne, <40000 décès au total sur 250 jours</li>
     </ul>
     <img src="data/figured3.png">
-<p>Scénario médian-pessimiste: les mesures de protection fonctionnent moyennement, R = 0.5
+<p>Scénario médian-pessimiste: les mesures de protection fonctionnent moyennement ou déconfinement trop rapide, R = 1
     <ul>
-        <li>Grande divergence entre les modèles</li>
-        <li>D'après le modèle SCIRE, un second pic plus ravageur entre Juillet et Novembre, reconfinement rapide</li>
-        <li>D'après le modèle ML, un second pic à l'automne, aussi intense que celui du printemps mais plus étalé, reconfinement possible, 40000 à 50000 décès</li>
+        <li>Divergence entre les modèles</li>
+        <li>D'après le modèle SCIRE, un second pic entre Juillet et Novembre, reconfinement possible, 200000 décès possible</li>
+        <li>D'après le modèle ML, un second pic à l'automne mais plus étalé qu'au printemps, 40000 à 50000 décès</li>
     </ul>
+    <img src="data/figured4.png">
 <p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, ma conclusion est donc de rester modeste</p>
 <p>Comme le montre le sud de la France et l'Afrique, les temps secs et chaud semble diminuer fortement R, donc soyons optimiste</p>
 
