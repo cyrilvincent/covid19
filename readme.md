@@ -29,7 +29,6 @@
     <li>0.75 millions de décès en 250 jours pour 5000 lits de réanimation</li>
     <li>Une pointe à 13000 morts en une journée avec le nombre de lit en réanimation nécessaire</li>
     <li>Une pointe à 19000 morts en une journée pour 5000 lits de réanimation</li>
-    <li></li>
 </ul>
 
 <p>A la date du déconfinement le 11 mai (J128), le modèle ML nous donne des chiffres assez optimistes mais avec <b>une RValue (score) trop faible pour que ces chiffres soient fiables</b>
@@ -50,7 +49,8 @@
 <p>Au déconfinement, le modèle SCIRE nous propose 3 scénarios
 <p>Scénario optimiste: Comme le SRAS, le virus quasi disparait, SCIRE.Beta = 0.01
     <ul>
-        <li>Un pic d'infection très bref à j+5, puis le virus quasi disparait à J+60</li>
+        <li>D'après le modèle SCIRE, un pic d'infection très bref à j+5, puis le virus quasi disparait assez rapidement à J+60</li>
+        <li>D'après le modèle ML, le virus quasi disparait immédiatement</li>
         <li>23000 décès</li>
     </ul>
     <img src="data/figured1.png">
@@ -64,9 +64,10 @@
 <p>Scénario médian: les mesures de protection fonctionnent, SCIRE.Beta est divisé par 4
     <ul>
         <li>Un second pic à J+8 puis un 3ème en Octobre - Novembre</li>
-        <li>44000 décès sur 250 jours</li>
-        <li>2 fois plus de personnes contaminées mais sur 7 mois</li>
-        <li>Un taux d'immunisation de 14% en fin d'année</li>
+        <li>D'après le modèle SCIRE, 44000 décès sur 250 jours</li>
+        <li>D'après le modèle ML, 27000 décès sur 250 jours</li>
+        <li>Entre 1.2 et 2 fois plus de personnes contaminées mais sur 7 mois</li>
+        <li>Un taux d'immunisation de 9% à 14% en fin d'année</li>
     </ul> 
 
 Il faudra attendre 2.5 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la population ayant été infectée par le virus
