@@ -8,13 +8,13 @@ import functools
 # Sain Contaminé Infecté Rétabli
 class SCIRE:
 
-    def __init__(self, S0 = 1, C0 = 0, I0 = 0, R0 = 0, beta = 1, v = 4.1, lmbda = 14, mu = 0.01):
+    def __init__(self, S0 = 1, C0 = 0, I0 = 0, r0 = 3.3, v = 5.1, lmbda = 15, mu = 0.01):
         self.S = S0
         self.C = C0
         self.I = I0
-        self.R = R0
+        self.R = 0
         self.DC = 0
-        self.beta = beta
+        self.beta = r0 / (lmbda / v)
         self.v = v
         self.lmbda = lmbda
         self.mu = mu
@@ -22,7 +22,7 @@ class SCIRE:
         self.fdcdt = lambda S, C, I,: self.beta * I * S - C / v  # dc/dt
         self.fdidt = lambda C, I: C / v - I / self.lmbda - self.mu * I  # dc/dt
         self.fdrdt = lambda I: -I / self.lmbda #dr/dt
-        self.fddcdt = lambda I: self.mu * I / l #ddc/dt
+        self.fddcdt = lambda I: self.mu * I / lmbda #ddc/dt
 
     def computedt(self):
         self.S += self.fdsdt(self.S, self.I)
@@ -51,12 +51,15 @@ if __name__ == '__main__':
     I0 = 10 / nbfrench #Taux Infection
     C0 = I0 * 4 #Taux Contaminé
     S0 = 1 - I0 - C0 #Taux Sain
-    beta = 0.22 # Coef contagieusité (aka R0) / tx de contact J45:DC286:Contact:2860:Beta = 0.22
-    v = 4.1 # Nb incubation
-    l = 14 # Durée d'infection
-    mu = 0.01 # Taux mortalité
-    scire = SCIRE(S0,C0,I0,beta=beta)
-    scires = scire.compute(250) #45 ou #250 pointe à 1300000 infectés, 260000 réa, 500000 morts en 250 jours, pointe à 13000 morts/jour
+    beta = 0.22
+    lmbda = 15 # Durée d'infection
+    v = 5.1 # Nb incubation
+    R0 = 3.3
+    beta  = R0 / (lmbda + v)
+    print(beta)
+    mu = 0.005 # Taux mortalité
+    scire = SCIRE(S0,C0,I0,r0=R0,v=v,lmbda=lmbda,mu=mu)
+    scires = scire.compute(45 - 15) #45-15 ou #250 pointe à 1300000 infectés, 260000 réa, 500000 morts en 250 jours, pointe à 13000 morts/jour
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])
     i = np.array([x.I for x in scires])
@@ -71,7 +74,7 @@ if __name__ == '__main__':
     I0 = 2281 * 10 / nbfrench #Taux Infection
     C0 = I0 * 6 #Taux Contaminé
     S0 = 1 - I0 - C0 #Taux Sain
-    scire = SCIRE(S0, C0, I0, beta=beta*0.98)
+    scire = SCIRE(S0, C0, I0, r0=0.5,v=v,lmbda=lmbda,mu=mu)
     scires = scire.compute(91-45)  # 250 pointe à 1300000 infectés, 260000 réa, 500000 morts en 250 jours, pointe à 13000 morts/jour
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])
@@ -86,7 +89,7 @@ if __name__ == '__main__':
     C0 = ((23000 * 100) - 180000) / nbfrench  # Taux Contaminé
     I0 = C0 / 6  # Taux Infection
     S0 = 1 - I0 - C0  # Taux Sain
-    scire = SCIRE(S0, C0, I0, beta=beta * 0.5) # 0.99 0.25 0.1
+    scire = SCIRE(S0, C0, I0, r0=R0/4,v=v,lmbda=lmbda,mu=mu) # 0.99 0.25 0.1
     scires = scire.compute(250)
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])

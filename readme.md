@@ -19,7 +19,7 @@
 <img src="data/figure.png"/>
 <p>En date du 24/04</p>
 <p>Sans confinement, ni mesure de distanciation, les chiffres sont catastrophiques
-<p>Ci dessous l'état des lieux à la date du confinement J45 qui permet d'établire SCIRE.Beta = 0.22
+<p>Ci dessous l'état des lieux à la date du confinement J45 qui permet de trouver R0 = 4.2 au lieu de 3.3 admis aujourd'hui, le virus serait donc 25% plus virulent suivant mon modèle
 <img src="data/figure45.png">
 <p>Sans mesure de protection, le scénario suivant se serait alors produit
 <img src="data/figure250.png">
@@ -47,33 +47,32 @@
     <li>Taux d'infection sera de 3%</li>
 </ul>
 <p>Au déconfinement, le modèle SCIRE nous propose 4 scénarios
-<p>Scénario optimiste: Comme le SRAS, le virus quasi disparait, SCIRE.Beta = 0.01
+<p>Scénario optimiste: Comme le SRAS, le virus quasi disparait, R=0.01
     <ul>
-        <li>D'après le modèle SCIRE, un pic d'infection très bref à j+5, puis le virus disparait assez rapidement à J+60</li>
+        <li>D'après le modèle SCIRE, un pic d'infection très bref à j+6, puis le virus disparait assez rapidement à J+50</li>
         <li>D'après le modèle ML, le virus quasi disparait immédiatement</li>
-        <li>&lt;25000 décès au total</li>
+        <li>Entre 23000 et 38000 décès au total</li>
     </ul>
     <img src="data/figured1.png">
-<p>Scénario pessimiste: le confinement est un échèc, SCIRE.Beta inchangé
+<p>Scénario pessimiste: le confinement est un échèc, R=R0
     <ul>
-        <li>Reconfinement à J+23</li>
+        <li>Reconfinement à J+50</li>
         <li>Un énorme pic d'infection à J+50 si aucun reconfinement</li>
         <li>40000 décès au total avec reconfinement, 500000 sans</li>
     </ul>
     <img src="data/figured2.png">
-<p>Scénario médian: les mesures de protection fonctionnent, SCIRE.Beta est divisé par 4
-    <ul>
-        <li>Un second pic à J+8 puis un 3ème en Octobre - Novembre</li>
-        <li>D'après le modèle SCIRE, 70000 décès au total sur 250 jours</li>
-        <li>D'après le modèle ML, 27000 décès au total sur 250 jours</li>
-        <li>Entre 1.2 et 3 fois plus de personnes contaminées mais sur 7 mois</li>
-        <li>Un taux d'immunisation de 9% à 21% en fin d'année</li>
-    </ul>
-<p>Scénario médian-pessimiste: les mesures de protection fonctionnent moyennement, SCIRE.Beta est divisé par 2
+<p>Scénario médian: les mesures de protection fonctionnent avec 90% de détection, un été protecteur, R=0.5
     <ul>
         <li>Grande divergence entre les modèles</li>
-        <li>Un second pic à J+70 et/ou J+180 aussi important que le précédent mais plus étalé, soit en été soit à l'automne</li>
-        <li>Le nombre de décès sur 250 jours varie de 27000 à 300000!</li>
+        <li>D'après le modèle SCIRE, un second pic ravageur à la fin de l'été, reconfinement rapide, sans reconfinement 300000 décès au total sur 250 jours</li>
+        <li>D'après le modèle ML, un second pic à l'automne 10 fois moins meurtrier avec 30000 décès au total sur 250 jours</li>
+    </ul>
+    <img src="data/figured3.png">
+<p>Scénario médian-pessimiste: les mesures de protection fonctionnent moyennement, R = R0 / 4
+    <ul>
+        <li>Grande divergence entre les modèles</li>
+        <li>D'après le modèle SCIRE, un second pic ravageur à J+50, reconfinement rapide, sans reconfinement 360000 décès au total sur 250 jours</li>
+        <li>D'après le modèle ML, un second pic à l'automne, aussi intense que le précédent mais plus étalé, reconfinement possible, 40000 à 50000 décès</li>
     </ul>
 <p>La moindre variation d'un paramètre peut complètement modifier l'évolution de l'épidémie, ma conclusion est donc de rester modeste</p>
 
