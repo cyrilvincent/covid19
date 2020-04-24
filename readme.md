@@ -73,6 +73,7 @@
     </ul>
     <img src="data/figured4.png">
 <p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, le ML ne possède pas assez données pour être fiable, ma conclusion est donc de rester modeste</p>
+<p>Conclusion générale : les modèles sont très incertains, le pramètre R reflète l'interaction entre les personnes, le confinement la diminué d'un facteur 7, d'autres mesures comme les protections et les détections massivent arrivent à un résultat proche, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va vite refluée si les moyens de détection fonctionnent et sont massifs, le risque de 2ème vague à l'automne est très fort et peu prévisible.</p>
 <p>Comme le montre le sud de la France et l'Afrique, les temps ensoleillés, secs et chauds semblent diminuer fortement R, donc soyons optimiste</p>
 
 Il faudra attendre 2 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la population ayant été infectée par le virus, sauf si un vaccin efficace et disponible arrive avant
