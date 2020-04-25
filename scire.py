@@ -134,13 +134,14 @@ if __name__ == '__main__':
     # Déconfinement
     DC128 = 23000
     R128 = 180000
-    detectionrate = 0.5 # 1 0.5 0.1
-    C0 = ((DC128 / mu) - R128) / nbfrench * detectionrate
+    rrate = 0.1
+    C0 = ((DC128 / mu) - R128) / nbfrench * rrate
     I0 = C0 / notdetectedrate # Taux Infection
     S0 = 1 - I0 - C0  # Taux Sain
-    fsummer = lambda x : -np.sin((x + 118 - 365 / 4 - 30) * 2 * np.pi / 365) * R0 / 2
+    r0 = R0 * 0.5 * rrate
+    fsummer = lambda x : -np.sin((x + 118 - 365 / 4 - 30) * 2 * np.pi / 365) * r0 / 1 # 1,2,4
     print(fsummer(np.arange(365)))
-    scire = SCIRE(S0, C0, I0, r0=R0 * detectionrate,v=v,lmbda=lmbda,mu=mu,dr=0.01,fs = fsummer) #0.1 0.01
+    scire = SCIRE(S0, C0, I0, r0=R0 * rrate, v=v, lmbda=lmbda, mu=mu, dr=0.1, fs = fsummer) #0.1
     scires = scire.compute(365)
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])
@@ -148,6 +149,9 @@ if __name__ == '__main__':
     dc = np.array([x.DC for x in scires]) + DC128 / nbfrench
     plt.plot(i * nbfrench, label="Infectés")
     plt.plot(dc * nbfrench, label="Décès")
+    plt.xlabel("Nb jour depuis le ll mai (J+128)")
+    plt.ylabel("Nb cas & décès")
     plt.legend()
+    plt.tight_layout()
     plt.show()
 
