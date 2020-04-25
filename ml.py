@@ -130,6 +130,13 @@ plt.xlabel(f'jour depuis {dconf}, score={scorenbc * 100:.0f}%')
 plt.ylabel('Nb cas')
 plt.show()
 
+plt.bar(np.arange(len(dfc.DC)), dfc.DC)
+plt.plot(modeldcc.predict(np.arange(dfc.ix.values[0], dfc.ix.values[0] + 40).reshape(-1,1)))
+plt.title='Nb Décès'
+plt.xlabel(f'jour depuis {dconf}, score={scoredcc * 100:.0f}%')
+plt.ylabel('Nb cas')
+plt.show()
+
 print(f"Nb Cas au déconfinement: {modelnbc.predict([[ideconf]])[0]:.0f}")
 print(f"Nb Décès au déconfinement: {modeldcc.predict([[ideconf]])[0]:.0f}")
 

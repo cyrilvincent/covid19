@@ -1,14 +1,31 @@
+from __future__ import annotations
+from typing import List, Callable
 import pandas as pd
 import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 import functools
 
-#https://interstices.info/modeliser-la-propagation-dune-epidemie/
-#Sain Contaminé Infecté Rétabli Etendu
-class SCIRE:
 
-    def __init__(self, S = 1, C = 0, I = 0, R = 0, r0 = 3.3, v = 2, lmbda = 15, mu = 0.005, dr = 0, fs = lambda _: 0):
+class SCIRE:
+    """
+    SCIRE+ Model
+    Sain Contaminé Infecté Rétabli Etendu
+    Improvments: dr & fs
+    https://interstices.info/modeliser-la-propagation-dune-epidemie/
+    """
+
+    def __init__(self,
+                 S:float = 1,
+                 C:float = 0,
+                 I:float = 0,
+                 R:float = 0,
+                 r0:float = 3.3,
+                 v:float = 2,
+                 lmbda:float = 15,
+                 mu:float = 0.005,
+                 dr:float = 0,
+                 fs:Callable[[float], float] = lambda _: 0):
         """
         :param S: Sain
         :param C: Contaminé
@@ -32,16 +49,19 @@ class SCIRE:
         self.mu = mu
         self.dr = dr
         self.fs = fs
-        self.i = 0
-        self.fdsdt = lambda S, I: -(self.beta+ self.fs(self.i)) * I * S  # ds/dt
+        self.i = 0 #dt
+        self.fdsdt = lambda S, I: -(self.beta + self.fs(self.i)) * I * S  # ds/dt
         self.fdcdt = lambda S, C, I,: (self.beta + self.fs(self.i)) * I * S - C / v  # dc/dt
         self.fdidt = lambda C, I: C / v - I / self.lmbda - self.mu * I  # dc/dt
         self.fdrdt = lambda I: -I / self.lmbda #dr/dt
         self.fddcdt = lambda I: self.mu * I / self.lmbda #ddc/dt
-        self.fdbetadt = lambda : -self.dr / self.lmbda
+        self.fdbetadt = lambda : -self.dr / self.lmbda #dbeta/dt
 
-    def computedt(self):
-        self.S += self.fdsdt(self.S, self.I)
+    def _computedt(self):
+        """
+        Compute the model by adding 1 day
+        """
+        self.S += np.min(self.fdsdt(self.S, self.I), 0)
         self.C += np.max(self.fdcdt(self.S, self.C, self.I), 0)
         self.I += np.max(self.fdidt(self.C, self.I), 0)
         self.R += self.fdrdt(self.I)
@@ -49,14 +69,19 @@ class SCIRE:
         self.beta += self.fdbetadt()
         self.i += 1
 
-    def compute(self, dt):
+    def compute(self, nbday:int)->List['SCIRE']:
+        """
+        Compute the model
+        :param nbday: the number of day to compute
+        :return: List[SCIRE]
+        """
         scires = []
-        for _ in range(dt):
-            self.computedt()
+        for _ in range(nbday):
+            self._computedt()
             scires.append(self.clone())
         return scires
 
-    def clone(self):
+    def clone(self)->SCIRE:
         scire = SCIRE()
         scire.S = self.S
         scire.C = self.C

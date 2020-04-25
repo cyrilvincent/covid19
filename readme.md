@@ -3,7 +3,7 @@
 <p>Etant expert en IA et Machine Learning, j'ai mené une étude sur les données COVID disponible sur le site santepubliquefrance.fr</p>
 <p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
-<p>J'ai utilisé le framework Scikit-Learn en Python pour analyser les données avec du Machine Learning (ML) et une régression polynômiale ridge de degré 4. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
+<p>J'ai utilisé le framework Scikit-Learn en Python 3.8 pour analyser les données avec du Machine Learning (ML) et une régression polynômiale ridge de degré 4. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
 <p>J'ai également programmé en Python le modèle SCIRE+ (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations en modulant le facteur beta d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
 <img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
 <h2>Etude 3: Le déconfinement</h2>
