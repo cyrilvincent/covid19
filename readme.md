@@ -4,33 +4,34 @@
 <p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
 <p>J'ai utilisé le framework Scikit-Learn en Python pour analyser les données avec du Machine Learning (ML) et une régression polynômiale ridge de degré 4. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
-<p>J'ai également programmé en Python le modèle SCIRE (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
+<p>J'ai également programmé en Python le modèle SCIRE+ (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations en modulant le facteur r d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
 <img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
 <h2>Etude 3: Le déconfinement</h2>
-<p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour cela j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et un taux d'atténuation dû à l'été R = R * DetectionRate * SummerRate, le modèle ML ne peut pas marcher pour le scénarios pessimistes car il ne devine pas la remontée de la courbe
-<p>Scénario Marseillais optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.1 * 0.1 = 0.03
+<p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour cela j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et une fonction d'atténuation sinusoidale dû à l'été R = R * DetectionRate * sin(2xpi/365)
+<p>Scénario Marseillais optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.1 - sin(t) * R0 / 2 ~= 0
     <ul>
-        <li>Un petit pic arrive à J+5</li>
-        <li>Le virus s'éteint entre 0 et 50 jours</li>
+        <li>Le modèle SCIRE prévoit un petit pic à J+5 et une extinction du virus à J+50</li>
+        <li>Le modèle ML prévoit un extinction en Mai</li>
         <li>24000 décès au total</li>
     </ul>
     <img src="data/figured1.png">
 <p>Scénario Milanais pessimiste: le confinement est un échec, R=R0, peu probable car ne se produit pas ailleurs dans le monde
     <ul>
-        <li>Un énorme pic d'infection à J+30</li>
-        <li>40000 décès au total avec reconfinement, 500000 sans</li>
+        <li>Un énorme pic d'infection à J+10</li>
+        <li>Reconfinement</li>
     </ul>
     <img src="data/figured2.png">
-<p>Scénario Grenoblois médian: les mesures de protection fonctionnent avec 90% de détection, isolement des patients infectés, protections, un été protecteur, R=R0*0.1*0.5=0.16
+<p>Scénario Grenoblois médian: les mesures de protection fonctionnent avec 90% de détection, isolement des patients infectés, protections, un été protecteur, R = R0 * 0.1 - sin(t) * R0 / 2 ~= [0:0.5]
     <ul>
-        <li>Une petite reprise rapide, un été clément</li>
-        <li>Un second pic modeste à l'automne, entre 24000 et 30000 décès en fonction de l'intensité du 2ème pic</li>
+        <li>Un petit pic en mai, puis un été clément</li>
+        <li>Normalement pas de seconde vague si R continue à baisser, grosse incertitude pour l'automne</li>
     </ul>
     <img src="data/figured3.png">
 <p>Scénario Parisien médian-pessimiste : les mesures de détection fonctionnent moyennement à 50%, le reste fonctionne bien et l'été fait son travail, R=R0*0.5*0.5=0.83
     <ul>
-        <li>Un pic moyen en Mai, un mois de Juin faussement tranquille</li>
-        <li>Un second pic entre Juillet et Novembre, reconfinement possible, + de 50000 décès</li>
+        <li>Un second pic en mai et un été tranquille</li>
+        <li>D'après le modèle ML un pic à l'automne, d'après SCIRE un énorme pic au printemps 2021</li>
+        <li>40000 décès à la fin de l'été</li>
     </ul>
     <img src="data/figured4.png">
 <p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, le ML ne possède pas assez données pour être fiable, il faut donc rester modeste</p>

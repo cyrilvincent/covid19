@@ -8,28 +8,46 @@ import functools
 #Sain Contaminé Infecté Rétabli Etendu
 class SCIRE:
 
-    def __init__(self, S0 = 1, C0 = 0, I0 = 0, R0 = 0, r0 = 3.3, v = 2, lmbda = 15, mu = 0.005):
-        self.S = S0
-        self.C = C0
-        self.I = I0
-        self.R = R0
+    def __init__(self, S = 1, C = 0, I = 0, R = 0, r0 = 3.3, v = 2, lmbda = 15, mu = 0.005, dr = 0, fs = lambda _: 0):
+        """
+        :param S: Sain
+        :param C: Contaminé
+        :param I: Infecté
+        :param R: Rétablis
+        :param r0: nombre moyen de contaminé par un infecté
+        :param v: durée incubation sans être contagieux
+        :param lmbda: durée moyenne de contagieusité
+        :param mu: taux de mortalité
+        :param dr: facteur de décroissance de R par rapport à R0
+        :param fs: fonction de saisonalité
+        """
+        self.S = S
+        self.C = C
+        self.I = I
+        self.R = R
         self.DC = 0
         self.beta = r0 / lmbda
         self.v = v
         self.lmbda = lmbda
         self.mu = mu
-        self.fdsdt = lambda S, I: -self.beta * I * S  # ds/dt
-        self.fdcdt = lambda S, C, I,: self.beta * I * S - C / v  # dc/dt
+        self.dr = dr
+        self.fs = fs
+        self.i = 0
+        self.fdsdt = lambda S, I: -(self.beta+ self.fs(self.i)) * I * S  # ds/dt
+        self.fdcdt = lambda S, C, I,: (self.beta + self.fs(self.i)) * I * S - C / v  # dc/dt
         self.fdidt = lambda C, I: C / v - I / self.lmbda - self.mu * I  # dc/dt
         self.fdrdt = lambda I: -I / self.lmbda #dr/dt
-        self.fddcdt = lambda I: self.mu * I / lmbda #ddc/dt
+        self.fddcdt = lambda I: self.mu * I / self.lmbda #ddc/dt
+        self.fdbetadt = lambda : -self.dr / self.lmbda
 
     def computedt(self):
         self.S += self.fdsdt(self.S, self.I)
-        self.C += self.fdcdt(self.S, self.C, self.I)
-        self.I += self.fdidt(self.C, self.I)
+        self.C += np.max(self.fdcdt(self.S, self.C, self.I), 0)
+        self.I += np.max(self.fdidt(self.C, self.I), 0)
         self.R += self.fdrdt(self.I)
-        self.DC += self.fddcdt(self.I)
+        self.DC += np.max(self.fddcdt(self.I), 0)
+        self.beta += self.fdbetadt()
+        self.i += 1
 
     def compute(self, dt):
         scires = []
@@ -74,30 +92,31 @@ if __name__ == '__main__':
     # plt.show()
 
     # Confinement
-    DC45 = 2281
-    I0 = (DC45 / mu) / nbfrench #Taux Infection
-    notdetectedrate = 6
-    C0 = I0 * notdetectedrate #Taux Contaminé
-    S0 = 1 - I0 - C0 #Taux Sain
-    scire = SCIRE(S0, C0, I0, r0=0.8,v=v,lmbda=lmbda,mu=mu)
-    scires = scire.compute(118-45)
-    i = np.array([x.I for x in scires])
-    dc = np.array([x.DC for x in scires]) + DC45 / nbfrench
-    plt.plot(i * nbfrench, label="Infectés")
-    plt.plot(dc * nbfrench, label="Décès")
-    plt.legend()
-    plt.show()
+    # DC45 = 2281
+    # I0 = (DC45 / mu) / nbfrench #Taux Infection
+    # notdetectedrate = 6
+    # C0 = I0 * notdetectedrate #Taux Contaminé
+    # S0 = 1 - I0 - C0 #Taux Sain
+    # scire = SCIRE(S0, C0, I0, r0=0.8,v=v,lmbda=lmbda,mu=mu)
+    # scires = scire.compute(118-45)
+    # i = np.array([x.I for x in scires])
+    # dc = np.array([x.DC for x in scires]) + DC45 / nbfrench
+    # plt.plot(i * nbfrench, label="Infectés")
+    # plt.plot(dc * nbfrench, label="Décès")
+    # plt.legend()
+    # plt.show()
 
     # Déconfinement
     DC128 = 23000
     R128 = 180000
     detectionrate = 0.5 # 1 0.5 0.1
-    summerrate = 0.5 # 1 0.5 0.1
     C0 = ((DC128 / mu) - R128) / nbfrench * detectionrate
     I0 = C0 / notdetectedrate # Taux Infection
     S0 = 1 - I0 - C0  # Taux Sain
-    scire = SCIRE(S0, C0, I0, r0=R0 * detectionrate * summerrate,v=v,lmbda=lmbda,mu=mu) #R0,0.01,R0*0.1,1
-    scires = scire.compute(250)
+    fsummer = lambda x : -np.sin((x + 118 - 365 / 4 - 30) * 2 * np.pi / 365) * R0 / 2
+    print(fsummer(np.arange(365)))
+    scire = SCIRE(S0, C0, I0, r0=R0 * detectionrate,v=v,lmbda=lmbda,mu=mu,dr=0.01,fs = fsummer) #0.1 0.01
+    scires = scire.compute(365)
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])
     i = np.array([x.I for x in scires])
