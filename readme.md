@@ -77,6 +77,7 @@
 <img src="data/figure250.png">
 Il faudra attendre 2 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la population ayant été infectée par le virus, sauf si un vaccin efficace et disponible arrive avant
 
+Voici un boulot de malade fait en <a href="https://www.kaggle.com/vanshjatana/machine-learning-and-time-series">Corée du Sud</a>
   
 
 
