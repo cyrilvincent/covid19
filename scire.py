@@ -135,13 +135,14 @@ if __name__ == '__main__':
     DC128 = 23000
     R128 = 180000
     rrate = 0.1
+    r128 = 0.5
     C0 = ((DC128 / mu) - R128) / nbfrench * rrate
     I0 = C0 / notdetectedrate # Taux Infection
     S0 = 1 - I0 - C0  # Taux Sain
-    r0 = R0 * 0.5 * rrate
+    r0 = R0 * r128 * rrate
     fsummer = lambda x : -np.sin((x + 118 - 365 / 4 - 30) * 2 * np.pi / 365) * r0 / 1 # 1,2,4
     print(fsummer(np.arange(365)))
-    scire = SCIRE(S0, C0, I0, r0=R0 * rrate, v=v, lmbda=lmbda, mu=mu, dr=0.1, fs = fsummer) #0.1
+    scire = SCIRE(S0, C0, I0, r0=r0 * rrate, v=v, lmbda=lmbda, mu=mu, dr=0.1, fs = fsummer) #0.1
     scires = scire.compute(365)
     ctot = 1 - np.array([x.S for x in scires])
     c = np.array([x.C for x in scires])
