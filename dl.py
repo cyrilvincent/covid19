@@ -2,9 +2,7 @@ import pandas as pd
 import datetime
 import matplotlib.pyplot as plt
 import numpy as np
-import sklearn.preprocessing as pp
-import sklearn.pipeline as pipe
-import sklearn.linear_model as sklm
+import sklearn.neural_network as nn
 import warnings
 
 d0 = datetime.date(2020,1,24)
@@ -53,23 +51,23 @@ dflift = df.loc[df.ix >= ilift]
 # axs[1].set_ylabel('Nb Décès')
 #plt.show()
 
-d=4
-warnings.filterwarnings('ignore')
-modelnb10 = pipe.make_pipeline(pp.PolynomialFeatures(d), sklm.Ridge())
+h=(1,)
+#warnings.filterwarnings('ignore')
+modelnb10 =nn.MLPClassifier(h)
 x10 = df10.ix.values.reshape(-1,1)
 y = df10.NbCas
 modelnb10.fit(x10, y)
 scorenb10 = modelnb10.score(x10,y)
-modeldc10 = pipe.make_pipeline(pp.PolynomialFeatures(d), sklm.Ridge())
+modeldc10 =nn.MLPClassifier(h)
 y = df10.DC
 modeldc10.fit(x10, y)
 scoredc10 = modeldc10.score(x10,y)
-modelnblift = pipe.make_pipeline(pp.PolynomialFeatures(d), sklm.Ridge())
+modelnblift =nn.MLPClassifier(h)
 xlift = dflift.ix.values.reshape(-1,1)
 y = dflift.NbCas
 modelnblift.fit(xlift, y)
 scorenblift = modelnblift.score(xlift,y)
-modeldclift = pipe.make_pipeline(pp.PolynomialFeatures(d), sklm.Ridge())
+modeldclift =nn.MLPClassifier(h)
 y = dflift.DC
 modeldclift.fit(xlift, y)
 scoredclift = modeldclift.score(xlift,y)
@@ -96,12 +94,12 @@ axs[1,1].set_xlabel(f'jour depuis {dlift}, score={scoredclift * 100:.0f}%')
 axs[1,1].set_ylabel('Nb Décès')
 plt.show()
 
-modelnbc = pipe.make_pipeline(pp.PolynomialFeatures(d), sklm.Ridge())
+modelnbc =nn.MLPClassifier(h)
 xc = dfc.ix.values.reshape(-1,1)
 y = dfc.NbCas
 modelnbc.fit(xc, y)
 scorenbc = modelnbc.score(xc,y)
-modeldcc = pipe.make_pipeline(pp.PolynomialFeatures(d), sklm.Ridge())
+modeldcc =nn.MLPClassifier(h)
 y = dfc.DC
 modeldcc.fit(xc, y)
 scoredcc = modeldcc.score(xc,y)

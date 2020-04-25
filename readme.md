@@ -2,8 +2,9 @@
 <p>Par Cyril Vincent</p>
 <p>Etant expert en IA et Machine Learning, j'ai mené une étude sur les données COVID disponible sur le site santepubliquefrance.fr</p>
 <p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
+<img src="giphy.gif"/>
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
-<p>J'ai utilisé le framework Scikit-Learn en Python 3.8 pour analyser les données avec du Machine Learning (ML) et une régression polynômiale ridge de degré 4. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
+<p>J'ai utilisé le framework Scikit-Learn en Python 3.8 pour analyser les données avec du Machine Learning (ML) et une régression polynômiale ridge de degré 4. Un réseau neuronal a été tenté sans succès par manque de données</p>
 <p>J'ai également programmé en Python le modèle SCIRE+ (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations en modulant le facteur beta d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
 <img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
 <h2>Etude 3: Le déconfinement</h2>
@@ -15,7 +16,7 @@
         <li>24000 décès au total</li>
     </ul>
     <img src="data/figured1.png">
-<p>Scénario Mulhousain pessimiste: le confinement est un échec, R=R0
+<p>Scénario Start & Go pessimiste: le confinement est un échec, R=R0
     <ul>
         <li>Un énorme pic d'infection à J+50</li>
         <li>Reconfinement</li>
@@ -23,7 +24,7 @@
     <img src="data/figured2.png"><img src="data/figureml.png">
 <p>Scénario Grenoblois médian: les mesures de protection fonctionnent avec 50% de détection, isolement des patients infectés, protections, un été protecteur, baisse du R de 0.1 tous les 15 jours, R = R0 * 0.5 * 0.5 - fsin(t) / 2 ~= [0.4:0.8]
     <ul>
-        <li>Un pic à J+5, puis une disparition du virus en Juin</li>
+        <li>Un petit pic à J+5, puis une disparition du virus en Juin</li>
         <li>Pas de seconde vague si R continue à baisser avec une grosse incertitude</li>
     </ul>
     <img src="data/figured3.png">
