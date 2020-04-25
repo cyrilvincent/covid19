@@ -17,7 +17,7 @@
     <img src="data/figured1.png">
 <p>Scénario Mulhousain pessimiste: le confinement est un échec, R=R0
     <ul>
-        <li>Un énorme pic d'infection à J+6</li>
+        <li>Un énorme pic d'infection à J+50</li>
         <li>Reconfinement</li>
     </ul>
     <img src="data/figured2.png"><img src="data/figureml.png">
