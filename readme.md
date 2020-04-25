@@ -3,9 +3,9 @@
 <p>Etant expert en IA et Machine Learning, j'ai mené une étude sur les données COVID disponible sur le site santepubliquefrance.fr</p>
 <p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
-<p>J'ai utilisé le framework Scikit-Learn pour analyser les données avec du Machine Learning (ML) et une regréssion polynômiale ridge de degré 4. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
-<p>J'ai également programmé le modèle SCIRE (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
-<img src="data/scir.png">
+<p>J'ai utilisé le framework Scikit-Learn en Python pour analyser les données avec du Machine Learning (ML) et une regréssion polynômiale ridge de degré 4. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
+<p>J'ai également programmé en Python le modèle SCIRE (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
+<img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
 <h2>Etude 3: Le déconfinement</h2>
 <p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour celà j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et un taux d'atténuation dû à l'été R = R * DetectionRate * SummerRate, le modèle ML ne peut pas marcher par manque de données
 <p>Scénario Marseillais optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.1 * 0.1 = 0.03
