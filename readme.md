@@ -1,4 +1,4 @@
-<h1>Etude du Covid19 en France par Machine Learning</h1>
+<h1>Etudes du Covid19 en France par Machine Learning</h1>
 <p>Par Cyril Vincent</p>
 <p>Etant expert en IA et Machine Learning, j'ai mené une étude sur les données COVID disponible sur le site santepubliquefrance.fr</p>
 <p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
@@ -7,7 +7,7 @@
 <p>J'ai également programmé en Python le modèle SCIRE (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
 <img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
 <h2>Etude 3: Le déconfinement</h2>
-<p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour celà j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et un taux d'atténuation dû à l'été R = R * DetectionRate * SummerRate, le modèle ML ne peut pas marcher par manque de données
+<p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour celà j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et un taux d'atténuation dû à l'été R = R * DetectionRate * SummerRate, le modèle ML ne peut pas marcher pour le scénarios pessimistes car il ne devine pas la remontée de la courbe
 <p>Scénario Marseillais optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.1 * 0.1 = 0.03
     <ul>
         <li>Un petit pic arrive à J+5</li>
@@ -17,7 +17,7 @@
     <img src="data/figured1.png">
 <p>Scénario Milanais pessimiste: le confinement est un échèc, R=R0, peu probable car ne se produit pas ailleurs dans le monde
     <ul>
-        <li>Un énorme pic d'infection à J+50</li>
+        <li>Un énorme pic d'infection à J+30</li>
         <li>40000 décès au total avec reconfinement, 500000 sans</li>
     </ul>
     <img src="data/figured2.png">
@@ -27,7 +27,7 @@
         <li>Un second pic modeste à l'automne, entre 24000 et 30000 décès en fonction de l'intensité du 2ème pic</li>
     </ul>
     <img src="data/figured3.png">
-<p>Scénario Parisien médian-pessiliste : les mesures de détection fonctionnent moyennement à 50%, le reste fonctionne bien et l'été fait son travail, R=R0*0.5*0.5=0.83
+<p>Scénario Parisien médian-pessimiste : les mesures de détection fonctionnent moyennement à 50%, le reste fonctionne bien et l'été fait son travail, R=R0*0.5*0.5=0.83
     <ul>
         <li>Un pic moyen en Mai, un mois de Juin faussement tranquille</li>
         <li>Un second pic entre Juillet et Novembre, reconfinement possible, + de 50000 décès</li>
@@ -42,9 +42,9 @@ Il faudra attendre 2 à 3 ans pour atteindre l'immunité collective situé autou
 <h2>Etude 2 : Le confinement</h2>
 <p>En date du 24/4 nous savons que le R0=3.3 est plus optimiste que mon étude 1 et le R à atteint 0.5 soit une baisse d'un facteur 7</p>
 <p>Tout d'abord un modèle SCIRE à été mis en place avec un Rmoyen=0.8</p>
-<img src="figurec.png">
+<img src="data/figurec.png">
 <p>Ensuite un modèle ML a été mis en place à partir du 24/4</p>
-<img src="figure.png">
+<img src="data/figure.png">
 <p>A la date du déconfinement le 11 mai (J128), le modèle ML nous donne un score trop faible (30%) pour être fiable et le modèle SCIRE est difficile à étudier quand R varie, le taux d'erreur est donc énorme</p>
 <ul>
     <li>Le modèle SCIRE prévoit 360000 cas réels par jour, contre 10 pour ML</li>
