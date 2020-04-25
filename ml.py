@@ -124,7 +124,7 @@ print(modelnbc.predict([[ideconf]])[0], modeldcc.predict([[ideconf]])[0])
 print(modelnblift.predict([[ijune]])[0], modelnbc.predict([[ijune]])[0])
 
 plt.bar(np.arange(len(dfc.NbCas)), dfc.NbCas)
-plt.plot(modelnbc.predict(np.arange(dfc.ix.values[0], dfc.ix.values[0] + 40).reshape(-1,1)))
+plt.plot(modelnbc.predict(np.arange(dfc.ix.values[0], dfc.ix.values[0] + 60).reshape(-1,1)))
 plt.title='Nb Cas'
 plt.xlabel(f'jour depuis {dconf}, score={scorenbc * 100:.0f}%')
 plt.ylabel('Nb cas')
@@ -151,4 +151,4 @@ txara = nbdcara / 20796
 print(f"Nb décès ARA: {nbdcara:.0f}")
 print(f"Nb infection ARA: {nbdcara * 1/tx:.0f}")
 print(f"Taux d'infection ARA: {(nbdcara * 1/tx) / 80000:.0f}%")
-
+print(f"Nouveau cas par jour en france: {modelnbc.predict([[ideconf]])[0]:.0f}")

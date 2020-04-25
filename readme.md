@@ -4,7 +4,7 @@
 <p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
 <p>J'ai utilisé le framework Scikit-Learn en Python pour analyser les données avec du Machine Learning (ML) et une régression polynômiale ridge de degré 4. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
-<p>J'ai également programmé en Python le modèle SCIRE+ (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations en modulant le facteur r d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
+<p>J'ai également programmé en Python le modèle SCIRE+ (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations en modulant le facteur beta d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
 <img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
 <h2>Etude 3: Le déconfinement</h2>
 <p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour cela j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et une fonction d'atténuation sinusoidale dû à l'été R = R * DetectionRate * sin(2xpi/365)
@@ -20,7 +20,7 @@
         <li>Un énorme pic d'infection à J+10</li>
         <li>Reconfinement</li>
     </ul>
-    <img src="data/figured2.png">
+    <img src="data/figured2.png"><img src="data/figureml.png">
 <p>Scénario Grenoblois médian: les mesures de protection fonctionnent avec 90% de détection, isolement des patients infectés, protections, un été protecteur, R = R0 * 0.1 - sin(t) * R0 / 2 ~= [0:0.5]
     <ul>
         <li>Un petit pic en mai, puis un été clément</li>
