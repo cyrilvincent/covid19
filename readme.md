@@ -3,11 +3,11 @@
 <p>Etant expert en IA et Machine Learning, j'ai mené une étude sur les données COVID disponible sur le site santepubliquefrance.fr</p>
 <p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
-<p>J'ai utilisé le framework Scikit-Learn en Python pour analyser les données avec du Machine Learning (ML) et une regréssion polynômiale ridge de degré 4. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
+<p>J'ai utilisé le framework Scikit-Learn en Python pour analyser les données avec du Machine Learning (ML) et une régression polynômiale ridge de degré 4. Il était impossible d'utiliser Keras car le nombre de données est trop faible</p>
 <p>J'ai également programmé en Python le modèle SCIRE (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
 <img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
 <h2>Etude 3: Le déconfinement</h2>
-<p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour celà j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et un taux d'atténuation dû à l'été R = R * DetectionRate * SummerRate, le modèle ML ne peut pas marcher pour le scénarios pessimistes car il ne devine pas la remontée de la courbe
+<p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour cela j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et un taux d'atténuation dû à l'été R = R * DetectionRate * SummerRate, le modèle ML ne peut pas marcher pour le scénarios pessimistes car il ne devine pas la remontée de la courbe
 <p>Scénario Marseillais optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.1 * 0.1 = 0.03
     <ul>
         <li>Un petit pic arrive à J+5</li>
@@ -15,7 +15,7 @@
         <li>24000 décès au total</li>
     </ul>
     <img src="data/figured1.png">
-<p>Scénario Milanais pessimiste: le confinement est un échèc, R=R0, peu probable car ne se produit pas ailleurs dans le monde
+<p>Scénario Milanais pessimiste: le confinement est un échec, R=R0, peu probable car ne se produit pas ailleurs dans le monde
     <ul>
         <li>Un énorme pic d'infection à J+30</li>
         <li>40000 décès au total avec reconfinement, 500000 sans</li>
@@ -34,14 +34,12 @@
     </ul>
     <img src="data/figured4.png">
 <p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, le ML ne possède pas assez données pour être fiable, il faut donc rester modeste</p>
-<p>Conclusion générale : les modèles sont très incertains, une boule de cristale ferait aussi bien, le paramètre R reflète l'interaction entre les personnes, le confinement l'a diminué d'un facteur 7, d'autres mesures comme les protections et les détections massives arrivent à un résultat proche, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va vite refluée si les moyens de détection fonctionnent et sont massifs, le risque de 2ème vague à l'automne est très fort mais peu quantifiable pour le moment.</p>
+<p>Conclusion générale : les modèles sont très incertains, une boule de cristal ferait aussi bien, le paramètre R reflète l'interaction entre les personnes, le confinement l'a diminué d'un facteur 7, d'autres mesures comme les protections et les détections massives arrivent à un résultat proche, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va vite refluée si les moyens de détection fonctionnent et sont massifs, le risque de 2ème vague à l'automne est très fort mais peu quantifiable pour le moment.</p>
 <p>Comme le montre le sud de la France et l'Afrique, les temps ensoleillés, secs et chauds semblent diminuer fortement R, donc soyons optimiste</p>
 
-Il faudra attendre 2 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la population ayant été infectée par le virus, sauf si un vaccin efficace et disponible arrive avant
-
 <h2>Etude 2 : Le confinement</h2>
-<p>En date du 24/4 nous savons que le R0=3.3 est plus optimiste que mon étude 1 et le R à atteint 0.5 soit une baisse d'un facteur 7</p>
-<p>Tout d'abord un modèle SCIRE à été mis en place avec un Rmoyen=0.8</p>
+<p>En date du 24/4 nous savons que le R0=3.3 est plus optimiste que mon étude 1 et le R a atteint 0.5 soit une baisse d'un facteur 7</p>
+<p>Tout d'abord un modèle SCIRE a été mis en place avec un Rmoyen=0.8</p>
 <img src="data/figurec.png">
 <p>Ensuite un modèle ML a été mis en place à partir du 24/4</p>
 <img src="data/figure.png">
@@ -63,8 +61,8 @@ Il faudra attendre 2 à 3 ans pour atteindre l'immunité collective situé autou
 
 
 <h2>Etude 1: Sans confinement</h2>
-<p>Seul le modèle SCIRE a pu être utilisé car les données étaient insufisantes pour le Machine Learning</p>
-<p>Ci dessous l'état des lieux à la date du confinement J45 qui permet de trouver R0 = 4.2
+<p>Seul le modèle SCIRE a pu être utilisé car les données étaient insuffisantes pour le Machine Learning</p>
+<p>Ci-dessous l'état des lieux à la date du confinement J45 qui permet de trouver R0 = 4.2
 <img src="data/figure45.png">
 <p>Sans confinement, ni protection, ni mesure de distanciation, les chiffres sont catastrophiques, en prenant comme hypothèse R0 = 4.2, en date de J45 la veille du confinement
 <ul>
@@ -75,6 +73,8 @@ Il faudra attendre 2 à 3 ans pour atteindre l'immunité collective situé autou
     <li>Une pointe à 20000 morts par jour pour 5000 lits de réanimation</li>
 </ul>
 <img src="data/figure250.png">
+Il faudra attendre 2 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la population ayant été infectée par le virus, sauf si un vaccin efficace et disponible arrive avant
+
   
 
 
