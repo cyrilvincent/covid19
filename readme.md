@@ -25,7 +25,7 @@
 <p>Scénario Grenoblois médian: les mesures de protection fonctionnent avec 50% de détection, isolement des patients infectés, protections, un été protecteur, R = R0 * 0.5 * 0.5 - fsin(t) / 2 ~= [0.4:0.8]
     <ul>
         <li>Une baisse rapide du virus sur 1 mois</li>
-        <li>Un rebond fin Juin</li>
+        <li>Un petit rebond fin Juin</li>
         <li>27000 décès</li>
     </ul>
     <img src="data/figured3.png">
@@ -34,9 +34,10 @@
         <li>Très incertain en fonction du paramètre de saisonnalité</li>
         <li>Un gros pric à J+15 à la limite du confinement et une baisse sur 75 à 100 jours</li>
         <li>50000 décès</li>
-        <li>Présence d'un pic à l'automne à 75% de certitude</li>
+        <li>Présence d'un pic à l'automne si l'été n'est pas chaud</li>
     </ul>
-    <img src="data/figured4.png"><img src="data/figured42.png"><img src="data/figured43.png">
+Ci dessous les 3 modélisation où l'amortissement de l'été est d'un facteur de 1/2, 1/3, 1/4
+<img src="data/figured4.png"><img src="data/figured42.png"><img src="data/figured43.png">
 <p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, le ML ne possède pas assez données pour être fiable, il faut donc rester modeste</p>
 <p>Conclusion générale : les modèles sont très incertains, une boule de cristal ferait aussi bien, le paramètre R reflète l'interaction entre les personnes, le confinement l'a diminué d'un facteur 7, d'autres mesures comme les protections et les détections massives arrivent à un résultat proche, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va vite refluée si les moyens de détection fonctionnent et sont massifs, le risque de 2ème vague à l'automne est très fort mais peu quantifiable pour le moment.</p>
 <p>Comme le montre le sud de la France et l'Afrique, les temps ensoleillés, secs et chauds semblent diminuer fortement R, donc soyons optimiste</p>
