@@ -95,19 +95,19 @@ Similarité HIV
 
 Il est vrai qu'une séquence de 38 bases ressemble au HIV
 <img src="data/hiv1.png">
-Il s'agit d'une ressemblance 33/38 soit 87%. Nous pouvons nous dire que 38 bases sur 30000 représente seulement 0.1% du virus, cependant cette séquence est utilisée pour transcrire un protéine, ce qui représente 2.5% des proteïnes générée ce qui n'est pas rien
+Il s'agit d'une ressemblance 33/38 soit 87%. Nous pouvons nous dire que 38 bases sur 30000 représente seulement 0.1% du virus, cependant cette séquence est utilisée pour transcrire un protéine, ce qui représente 2.5% des proteïnes générées ce qui n'est pas rien
 
 Une autre séquence plus courte ressemble au HIV
 <img src="data/hiv2.png">
-Il s'agit d'une ressemblance 28/30 soit 93%
+Il s'agit d'une ressemblance 28/30 soit 93%.
 La probabilité d'avoir 30 bases identiques sur 30000 d'après la loi binomiale est n! / k!(n-k)! = 30000! / 28!(29972)! = 1/28!*PI(29973..30000) < 1e-64 = 0
 
 Contre arguments: Un virus de chauve souris possède une séquence similaire
-<img src="data/hiv2.png">
+<img src="data/hiv2.png">Cette séquence code une enzyme indispensable à tous les virus ARN comme le HIV.
 Ces séquences n'appartiennent pas à la proteine spike utilisée pour les vaccins.
 Ces séquences sont très courtes car elles ne peuvent transcrire que 10 acides aminées ce qui est insufisant pour copier une proteine.
 
-Conclusion: Avoir 2 protèines identiques au HIV ne peut pas être dûe au hasard, il y a une forte probabilité pour que ces séquences provinnent d'un autre virus, cependant pour la séquence de 30 bases un léger doute peut persister
+Conclusion: La séquence à 38 base est naturelle et commune, pour la séquence à 30 bases, avoir 2 protèines identiques au HIV ne peut pas être dûe au hasard, soit elle provient d'un autre virus, ce qui est largement probable, soit c'est une manipulation humaine, ce qui est improbable mais pas impossible, il faudrait étudier à quoi sert exactement cette séquence.
 
   
 
