@@ -107,7 +107,7 @@ Contre arguments: Un virus de chauve souris possède une séquence similaire
 Ces séquences n'appartiennent pas à la proteine spike utilisée pour les vaccins.
 Ces séquences sont très courtes car elles ne peuvent transcrire que 10 acides aminées ce qui est insufisant pour copier une proteine.
 
-La séquence TTCCTATGGACAGTACAGTTAAAAACTATT se retrouve dans une séquence plus grande à la position 20401 qui code la protéine commencant par SPFELEDFIP<b>MDSTVKNYFI</b> qui n'est pas documentée sur Internet
+La séquence TTCCTATGGACAGTACAGTTAAAAACTATT se retrouve dans une séquence plus grande à la position <a href="covid19.aa">20401</a> qui code la protéine commencant par SPFELEDFIP<b>MDSTVKNYFI</b> de 80 acides aminées qui n'est pas documentée sur Internet
 
 Conclusion: La séquence à 38 bases est naturelle. Concernant la séquence à 30 bases, le hasard ne peut l'expliquer, de plus elle modifie une proteine du virus, soit elle provient d'un autre virus (probable), soit c'est une manipulation humaine (moins probable). Il suffit d'étudier cette protéine, de voir si elle est présente dans d'autres virus pour lever le doute.
 
