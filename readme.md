@@ -29,17 +29,17 @@
         <li>27000 décès</li>
     </ul>
     <img src="data/figured3.png">
-<p>Scénario Parisien médian-pessimiste : les mesures de détection fonctionnent moyennement 5, seul 50% des symptomatiques sont détectés soit 10% de détection totale, le reste fonctionne bien et l'été fait son travail, baisse du R de 0.05 tous les 15 jours, R = R0 * 0.5 * 0.9 - fsin(t) / 4 ~= [1.6:2.2]
+<p>Scénario Parisien médian-pessimiste : les mesures de détection fonctionnent moyennement, seul 50% des symptomatiques sont détectés soit 10% de détection totale, le reste fonctionne bien et l'été fait son travail, baisse du R de 0.05 tous les 15 jours, R = R0 * 0.5 * 0.9 - fsin(t) / 4 ~= [1.6:2.2]
     <ul>
         <li>Très incertain en fonction du paramètre de saisonnalité</li>
         <li>Un gros pric à J+15 à la limite du confinement et une baisse sur 75 à 100 jours</li>
         <li>50000 décès</li>
         <li>Présence d'un pic à l'automne si l'été n'est pas chaud</li>
     </ul>
-Ci dessous les 3 modélisation où l'amortissement de l'été est d'un facteur de 1/2, 1/3, 1/4
+Ci dessous les 3 modélisations où l'amortissement de l'été est d'un facteur de 1/2, 1/3, 1/4
 <img src="data/figured4.png"><img src="data/figured42.png"><img src="data/figured43.png">
 <p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, le ML ne possède pas assez données pour être fiable, il faut donc rester modeste</p>
-<p>Conclusion générale : les modèles sont très incertains, une boule de cristal ferait aussi bien, le paramètre R reflète l'interaction entre les personnes, le confinement l'a diminué d'un facteur 7, d'autres mesures comme les protections et les détections massives arrivent à un résultat proche, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va vite refluée si les moyens de détection fonctionnent et sont massifs, le risque de 2ème vague à l'automne est très fort mais peu quantifiable pour le moment.</p>
+<p>Conclusion générale : les modèles sont très incertains, une boule de cristal ferait aussi bien, le paramètre R reflète l'interaction entre les personnes, le confinement l'a diminué d'un facteur 7, d'autres mesures comme les protections et les détections massives arrivent à un résultat proche, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va refluer si les moyens de détection fonctionnent et sont massifs, sinon elle repartira, le risque de 2ème vague à l'automne est présent mais peu quantifiable.</p>
 <p>Comme le montre le sud de la France et l'Afrique, les temps ensoleillés, secs et chauds semblent diminuer fortement R, donc soyons optimiste</p>
 
 <h2>Etude 2 : Le confinement</h2>
@@ -100,11 +100,11 @@ Il s'agit d'une ressemblance 33/38 soit 87%. Nous pouvons nous dire que 38 bases
 Une autre séquence plus courte ressemble au HIV
 <img src="data/hiv2.png">
 Il s'agit d'une ressemblance 28/30 soit 93%.
-La probabilité d'avoir 30 bases identiques sur 30000 d'après la loi binomiale est n! / k!(n-k)! = 30000! / 28!(29972)! = 1/28!*PI(29973..30000) < 1e-64 = 0
+La probabilité d'avoir 30 bases identiques sur 30000 d'après la loi binomiale est n! / k!(n-k)! = 30000! / 28!(29972)! = 1/28!*PI(29973..30000) < 1e-64 = 0.
 Ces 2 séquences sont actives dans la transcription
 
 Contre arguments: Un virus de chauve souris possède une séquence similaire
-<img src="data/hiv2.png">Cette séquence code une enzyme indispensable à tous les virus ARN comme le HIV.
+<img src="data/bat1.png">Cette séquence code une enzyme indispensable à tous les virus ARN comme le HIV.
 Ces séquences n'appartiennent pas à la proteine spike utilisée pour les vaccins, sauf accident il n'y aurait aucun intérêt à les injecter.
 Ces séquences sont très courtes car elles ne peuvent transcrire que 10 acides aminées ce qui est insufisant pour copier une proteine entière.
 
