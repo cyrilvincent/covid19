@@ -9,9 +9,9 @@
 <img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
 <h2>Etude 3: Le déconfinement</h2>
 <p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour cela j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et une fonction d'atténuation sinusoidale dû à l'été R = R * DetectionRate * sin(2xpi/365)
-<p>Scénario Marseillais optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.5 * 0.1 - sin(t) * r ~= [0:0.2]
+<p>Scénario Marseillais optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.5 * 0.1 - fsin(t) ~= [0..0.4]
     <ul>
-        <li>Le modèle SCIRE prévoit un petit pic à J+5 et une extinction du virus début Juin</li>
+        <li>Le modèle SCIRE prévoit une extinction du virus début Juin avec une baisse par vaguelette</li>
         <li>Le modèle ML prévoit un extinction en Mai</li>
         <li>24000 décès au total</li>
     </ul>
@@ -22,19 +22,21 @@
         <li>Reconfinement</li>
     </ul>
     <img src="data/figured2.png"><img src="data/figureml.png">
-<p>Scénario Grenoblois médian: les mesures de protection fonctionnent avec 50% de détection, isolement des patients infectés, protections, un été protecteur, baisse du R de 0.1 tous les 15 jours, R = R0 * 0.5 * 0.5 - fsin(t) / 2 ~= [0.4:0.8]
+<p>Scénario Grenoblois médian: les mesures de protection fonctionnent avec 50% de détection, isolement des patients infectés, protections, un été protecteur, R = R0 * 0.5 * 0.5 - fsin(t) / 2 ~= [0.4:0.8]
     <ul>
-        <li>Un petit pic à J+5, puis une disparition du virus en Juin</li>
-        <li>Pas de seconde vague si R continue à baisser avec une grosse incertitude</li>
+        <li>Une baisse rapide du virus sur 1 mois</li>
+        <li>Un rebond fin Juin</li>
+        <li>27000 décès</li>
     </ul>
     <img src="data/figured3.png">
-<p>Scénario Parisien médian-pessimiste : les mesures de détection fonctionnent moyennement à 50% des symptomatiques soit 10% de détection totale, le reste fonctionne bien et l'été fait son travail, baisse du R de 0.05 tous les 15 jours, R = R0 * 0.5 * 0.1 - fsin(t) / 4 ~= [1.6:2.2]
+<p>Scénario Parisien médian-pessimiste : les mesures de détection fonctionnent moyennement à 50% des symptomatiques soit 10% de détection totale, le reste fonctionne bien et l'été fait son travail, baisse du R de 0.05 tous les 15 jours, R = R0 * 0.5 * 0.9 - fsin(t) / 4 ~= [1.6:2.2]
     <ul>
-        <li>Un gros pric à J+15 à la limite du confinement et un été tranquille</li>
-        <li>70000 décès</li>
-        <li>D'après le modèle ML un pic à l'automne, d'après SCIRE pas de second pic, mais une petite variation de la fonction de saisonalité fait apparaitre un énorme pic au printemps 2021</li>
+        <li>Très incertain en fonction du paramètre de saisonnalité</li>
+        <li>Un gros pric à J+15 à la limite du confinement et une baisse sur 75 à 100 jours</li>
+        <li>50000 décès</li>
+        <li>Présence d'un pic à l'automne à 75% de certitude</li>
     </ul>
-    <img src="data/figured4.png"><img src="data/figured42.png">
+    <img src="data/figured4.png"><img src="data/figured42.png"><img src="data/figured43.png">
 <p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, le ML ne possède pas assez données pour être fiable, il faut donc rester modeste</p>
 <p>Conclusion générale : les modèles sont très incertains, une boule de cristal ferait aussi bien, le paramètre R reflète l'interaction entre les personnes, le confinement l'a diminué d'un facteur 7, d'autres mesures comme les protections et les détections massives arrivent à un résultat proche, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va vite refluée si les moyens de détection fonctionnent et sont massifs, le risque de 2ème vague à l'automne est très fort mais peu quantifiable pour le moment.</p>
 <p>Comme le montre le sud de la France et l'Afrique, les temps ensoleillés, secs et chauds semblent diminuer fortement R, donc soyons optimiste</p>
