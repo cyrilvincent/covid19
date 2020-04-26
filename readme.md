@@ -1,12 +1,12 @@
 <h1>Etudes du Covid19 en France par Machine Learning</h1>
-<p>Par Cyril Vincent</p>
+<p>Par <a href="http://www.cyrilvincent.com">Cyril Vincent</a></p>
 <p>Etant expert en IA et Machine Learning, j'ai mené une étude sur les données COVID disponible sur le site santepubliquefrance.fr</p>
 <p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
 <img src="data/giphy.gif"/>
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
 <p>J'ai utilisé le framework Scikit-Learn en Python 3.8 pour analyser les données avec du Machine Learning (ML) et une régression polynômiale ridge de degré 4. Un réseau neuronal a été tenté sans succès par manque de données</p>
-<p>J'ai également programmé en Python le modèle SCIRE+ (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations en modulant le facteur beta d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
-<img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
+<p>J'ai également programmé en Python le modèle SCIRE+ à l'aide du framework NumPy (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations en modulant le facteur beta d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
+<img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://numpy.org/_static/numpy_logo.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
 <h2>Etude 3: Le déconfinement</h2>
 <p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour cela j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et une fonction d'atténuation sinusoidale dû à l'été R = R * DetectionRate * sin(2xpi/365)
 <p>Scénario Marseillais optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.5 * 0.1 - fsin(t) ~= [0..0.4]
@@ -111,9 +111,9 @@ Le HIV est un retrovirus qui fonctionne différement d'un virus coronavirus
 
 La séquence TTCCTATGGACAGTACAGTTAAAAACTATT se retrouve dans une séquence plus grande à la position <a href="covid19.aa">20401</a> qui code la protéine commencant par SPFELEDFIP<b>MDSTVKNYFI</b>... de 80 acides aminées.
 
-Une transcription détaillée du virus est disponible à la <a href="https://www.ncbi.nlm.nih.gov/nuccore/1798174254">NCBI</a>.
-Sur cette transcription nous retrouvons bien la séquence à la position 20401 mais il ne semble pas produire de protéine. Elle semble être dans la plus grande zone de la séquence sans transcription comprise 13542 et 21543. La fameuse proteine Spike se trouve 1100 bases plus loin.
+Une transcription détaillée du virus est disponible à la <a href="https://www.ncbi.nlm.nih.gov/nuccore/1798174254">NCBI</a>. Le virus produit 11 gênes.
+Sur cette transcription nous retrouvons bien la séquence à la position 20401 mais elle ne semble pas produire de gêne. Elle semble être dans la plus grande zone de la séquence sans transcription comprise 13542 et 21543. La fameuse proteine Spike se trouve 1100 bases plus loin.
 
-Conclusion: Ces séquences sont naturelles, il existe une infime possibilité que la séquence de 30 bases soit le résultat d'une manipulation humaine qui a échouée.
+Conclusion: Ces séquences sont naturelles, il existe une infime possibilité que la séquence de 30 bases soit le résultat d'une manipulation humaine qui a échouée. J'encourage néanmoins à lire la page <a href="https://fr.wikipedia.org/wiki/Institut_de_virologie_de_Wuhan">Wikipedia du laboratoire P4 de Wuhan</a>.
 
 
