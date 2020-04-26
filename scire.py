@@ -122,7 +122,7 @@ if __name__ == '__main__':
     # notdetectedrate = 6
     # C0 = I0 * notdetectedrate #Taux Contaminé
     # S0 = 1 - I0 - C0 #Taux Sain
-    # scire = SCIRE(S0, C0, I0, r0=0.8,v=v,lmbda=lmbda,mu=mu)
+    # scire = SCIRE(S0, C0, I0, r0=1,v=v,lmbda=lmbda,mu=mu)
     # scires = scire.compute(118-45)
     # i = np.array([x.I for x in scires])
     # dc = np.array([x.DC for x in scires]) + DC45 / nbfrench
@@ -134,21 +134,20 @@ if __name__ == '__main__':
 
     # Déconfinement
     DC128 = 23000
-    R128 = 180000
-    rrate = 0.9 # 0.1 0.5 0.9
+    R128 = 800000
+    rrate = 0.5 # 0.1 0.5 0.9
     r128 = 0.5 #0.5
     C0 = ((DC128 / mu) - R128) / nbfrench * rrate
-    I0 = C0 * rrate / notdetectedrate
+    I0 = C0 * rrate
     S0 = 1 - I0 - C0
     r0 = R0 * r128 * rrate
-    fsamort = 3 #2,3,4
-    R0 = R0 - R0 / fsamort
+    fsamort = 2 #2,3,4
+    R0D = R0 - R0 / fsamort
     fsummer = lambda x : -np.sin((x + 118 - 365 / 4 - 30) * 2 * np.pi / 365) * R0 / fsamort
     print(fsummer(np.arange(365)))
-    scire = SCIRE(S0, C0, I0, r0=R0, v=v, lmbda=lmbda, mu=mu, dr=-0.1, fs = fsummer) #0.1 0 -0.1
+    scire = SCIRE(S0, C0, I0, r0=R0D, v=v, lmbda=lmbda, mu=mu, dr=0, fs = fsummer) #0.1 0 -0.1
     scires = scire.compute(200)
     ctot = 1 - np.array([x.S for x in scires])
-    c = np.array([x.C for x in scires])
     i = np.array([x.I for x in scires])
     dc = np.array([x.DC for x in scires]) + DC128 / nbfrench
     plt.plot(i * nbfrench, label="Infectés")

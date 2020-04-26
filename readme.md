@@ -44,15 +44,16 @@ Ci dessous les 3 modélisation où l'amortissement de l'été est d'un facteur d
 
 <h2>Etude 2 : Le confinement</h2>
 <p>En date du 24/4 nous savons que le R0=3.3 est plus optimiste que mon étude 1 et le R a atteint 0.5 soit une baisse d'un facteur 7</p>
-<p>Tout d'abord un modèle SCIRE a été mis en place avec un Rmoyen=0.8</p>
+<p>Tout d'abord un modèle SCIRE a été mis en place avec un Rmoyen=1 variant de 3.3 à 0.5</p>
 <img src="data/figurec.png">
 <p>Ensuite un modèle ML a été mis en place à partir du 24/4</p>
 <img src="data/figure.png">
 <p>A la date du déconfinement le 11 mai (J128), le modèle ML nous donne un score trop faible (30%) pour être fiable et le modèle SCIRE est difficile à étudier quand R varie, le taux d'erreur est donc énorme</p>
 <ul>
-    <li>Le modèle SCIRE prévoit 360000 cas réels par jour, contre 10 pour ML</li>
-    <li>150000 cas confirmés</li>
-    <li>23000 décès</li>
+    <li>Le modèle SCIRE prévoit 800000 personnes en cours d'infection</li>
+    <li>Le modèle ML prévoit 165000 ca détectés</li>
+    <li>Le modèle SCIRE prévoit 32000 décès</li>
+    <li>Le modèle ML prévoir 23000 décès mais ne tient compte que des chiffres officiels, il ne prends donc pas en compte les décès hors hopitaux et EPHAD</li>
     <li>4.5 millions de personnes ayant été infectées</li>
     <li>Taux d'infection de 7%</li>
 </ul>
