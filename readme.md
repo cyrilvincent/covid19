@@ -80,6 +80,8 @@ Ci dessous les 3 modélisation où l'amortissement de l'été est d'un facteur d
 <img src="data/figure250.png">
 Il faudra attendre 2 à 3 ans pour atteindre l'immunité collective situé autour de 60% de la population ayant été infectée par le virus, sauf si un vaccin efficace et disponible arrive avant
 
+Voici un boulot de malade fait en <a href="https://www.kaggle.com/vanshjatana/machine-learning-and-time-series">Corée du Sud</a>
+
 <H2>Mini étude: Analyse ADN</h2>
 En 2011 et 2013 j'avais publié sur Google Code un programme en C# reproduisant le mécanisme génétique de l'ADN vers les protéines en passant par l'ARN et le Ribosome, pour différents types de cellule.
 
@@ -87,9 +89,26 @@ Le génôme complet du SARS-CoV-2 est disponible <a href="https://www.kaggle.com
 Il s'agit d'un virus à ARN qui pirate les ARNt des cellules humaines, le génôme fait un peu moins de 30000 bases
 
 J'ai d'abord convertis le génôme en ARN <a href="data/covid19.rna">Covid19.rna</a>, j'ai ensuite créé par retro-transcription son ADN <a href="data/covid19.dna">Covid19.dna</a>.
-La transcription d'un ARN de virus est plus complexe que celui d'un ARN célullaire car il peut être lu dans les 2 sens et avec 3 décalages différents en fonction de son insertion dans l'ARN hôte, il y a donc 6 transcriptions possibles : les frames 0,1,2,-0,-1 et -2. Le virus génère 41 proteines, dont voici la représentation <a href="data/covid19.aa">covid19.aa</a>
+La transcription d'un ARN de virus est plus complexe que celui d'un ARN celullaire car il peut être lu dans les 2 sens et avec 3 décalages différents en fonction de son insertion dans l'ARN hôte, il y a donc 6 transcriptions possibles : les frames 0,1,2,-0,-1 et -2. Le virus génère 41 proteines, dont voici la représentation <a href="data/covid19.aa">covid19.aa</a>
 
-Voici un boulot de malade fait en <a href="https://www.kaggle.com/vanshjatana/machine-learning-and-time-series">Corée du Sud</a>
+Similarité HIV
+
+Il est vrai qu'une séquence de 38 bases ressemble au HIV
+<img src="data/hiv1.png">
+Il s'agit d'une ressemblance 33/38 soit 87%. Nous pouvons nous dire que 38 bases sur 30000 représente seulement 0.1% du virus, cependant cette séquence est utilisée pour transcrire un protéine, ce qui représente 2.5% des proteïnes générée ce qui n'est pas rien
+
+Une autre séquence plus courte ressemble au HIV
+<img src="data/hiv2.png">
+Il s'agit d'une ressemblance 28/30 soit 93%
+La probabilité d'avoir 30 bases identiques sur 30000 d'après la loi binomiale est n! / k!(n-k)! = 30000! / 28!(29972)! = 1/28!*PI(29973..30000) < 1e-64 = 0
+
+Contre arguments: Un virus de chauve souris possède une séquence similaire
+<img src="data/hiv2.png">
+Ces séquences n'appartiennent pas à la proteine spike utilisée pour les vaccins.
+Ces séquences sont très courtes car elles ne peuvent transcrire que 10 acides aminées ce qui est insufisant pour copier une proteine.
+
+Conclusion: Avoir 2 protèines identiques au HIV ne peut pas être dûe au hasard, il y a une forte probabilité pour que ces séquences provinnent d'un autre virus, cependant pour la séquence de 30 bases un léger doute peut persister
+
   
 
 
