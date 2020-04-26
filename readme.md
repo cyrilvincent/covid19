@@ -1,8 +1,9 @@
 <h1>Etudes du Covid19 en France par Machine Learning</h1>
 <p>Par <a href="http://www.cyrilvincent.com">Cyril Vincent</a></p>
+<img src="data/giphy.gif"/>
 <p>Etant expert en IA et Machine Learning, j'ai mené une étude sur les données COVID disponible sur le site santepubliquefrance.fr</p>
 <p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
-<img src="data/giphy.gif"/>
+<img src="https://i.ytimg.com/vi/8Dicw41hHlk/maxresdefault.jpg"/>
 <p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
 <p>J'ai utilisé le framework Scikit-Learn en Python 3.8 pour analyser les données avec du Machine Learning (ML) et une régression polynômiale ridge de degré 4. Un réseau neuronal a été tenté sans succès par manque de données</p>
 <p>J'ai également programmé en Python le modèle SCIRE+ à l'aide du framework NumPy (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations en modulant le facteur beta d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
