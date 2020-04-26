@@ -111,7 +111,7 @@ Le HIV est un retrovirus qui fonctionne différement d'un virus coronavirus
 
 La séquence TTCCTATGGACAGTACAGTTAAAAACTATT se retrouve dans une séquence plus grande à la position <a href="covid19.aa">20401</a> qui code la protéine commencant par SPFELEDFIP<b>MDSTVKNYFI</b>... de 80 acides aminées.
 
-Une transcription détaillée du virus est disponible à la <a href="https://www.ncbi.nlm.nih.gov/nuccore/1798174254>NCBI</a>.
+Une transcription détaillée du virus est disponible à la <a href="https://www.ncbi.nlm.nih.gov/nuccore/1798174254">NCBI</a>.
 Sur cette transcription nous retrouvons bien la séquence à la position 20401 mais il ne semble pas produire de protéine. Elle semble être dans la plus grande zone de la séquence sans transcription comprise 13542 et 21543. La fameuse proteine Spike se trouve 1100 bases plus loin.
 
 Conclusion: Ces séquences sont naturelles, il existe une infime possibilité que la séquence de 30 bases soit le résultat d'une manipulation humaine qui a échouée.
