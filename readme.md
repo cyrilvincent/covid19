@@ -100,6 +100,7 @@ Une autre séquence plus courte ressemble au HIV
 <img src="data/hiv2.png">
 Il s'agit d'une ressemblance 28/30 soit 93%.
 La probabilité d'avoir 30 bases identiques sur 30000 d'après la loi binomiale est n! / k!(n-k)! = 30000! / 28!(29972)! = 1/28!*PI(29973..30000) < 1e-64 = 0
+Ces 2 séquences sont actives dans la transcription
 
 Contre arguments: Un virus de chauve souris possède une séquence similaire
 <img src="data/hiv2.png">Cette séquence code une enzyme indispensable à tous les virus ARN comme le HIV.
@@ -108,6 +109,6 @@ Ces séquences sont très courtes car elles ne peuvent transcrire que 10 acides 
 
 La séquence TTCCTATGGACAGTACAGTTAAAAACTATT se retrouve dans une séquence plus grande à la position 20401 qui code la protéine commencant par SPFELEDFIP<b>MDSTVKNYFI</b> qui n'est pas documentée sur Internet
 
-Conclusion: La séquence à 38 bases est naturelle. Concernant la séquence à 30 bases, le hasard ne peut l'expliquer, soit elle provient d'un autre virus, ce qui est probable, soit c'est une manipulation humaine, ce qui est improbable mais pas impossible. 
+Conclusion: La séquence à 38 bases est naturelle. Concernant la séquence à 30 bases, le hasard ne peut l'expliquer, de plus elle modifie une proteine du virus, soit elle provient d'un autre virus (probable), soit c'est une manipulation humaine (moins probable). Il suffit d'étudier cette protéine, de voir si elle est présente dans d'autres virus pour lever le doute.
 
 
