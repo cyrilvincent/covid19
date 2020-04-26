@@ -107,7 +107,7 @@ Contre arguments: Un virus de chauve souris possède une séquence similaire
 Ces séquences n'appartiennent pas à la proteine spike utilisée pour les vaccins.
 Ces séquences sont très courtes car elles ne peuvent transcrire que 10 acides aminées ce qui est insufisant pour copier une proteine.
 
-Conclusion: La séquence à 38 base est naturelle et commune, pour la séquence à 30 bases, avoir 2 protèines identiques au HIV ne peut pas être dûe au hasard, soit elle provient d'un autre virus, ce qui est largement probable, soit c'est une manipulation humaine, ce qui est improbable mais pas impossible, il faudrait étudier à quoi sert exactement cette séquence.
+Conclusion: La séquence à 38 bases est naturelle. Concernant la séquence à 30 bases, le hasard ne peut l'expliquer, soit elle provient d'un autre virus, ce qui est probable, soit c'est une manipulation humaine, ce qui est improbable mais pas impossible.
 
   
 
