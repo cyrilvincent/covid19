@@ -116,5 +116,5 @@ Une transcription détaillée du virus est disponible à la <a href="https://www
 Sur cette transcription nous retrouvons bien la séquence à la position 20401 mais elle ne semble pas produire de gêne. Elle semble être dans la plus grande zone de la séquence sans transcription comprise 13542 et 21543. La fameuse proteine Spike se trouve 1100 bases plus loin.
 
 Conclusion: Ces séquences sont naturelles, il existe une infime possibilité que la séquence de 30 bases soit le résultat d'une manipulation humaine qui a échouée. J'encourage néanmoins à lire la page <a href="https://fr.wikipedia.org/wiki/Institut_de_virologie_de_Wuhan">Wikipedia du laboratoire P4 de Wuhan</a>.
-
+<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F100010981668794%2Fvideos%2F1089207854788593%2F&show_text=0&width=476" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 
