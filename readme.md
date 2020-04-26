@@ -87,13 +87,13 @@ Voici un boulot de malade fait en <a href="https://www.kaggle.com/vanshjatana/ma
 En 2011 et 2013 j'avais publié sur Google Code un programme en C# reproduisant le mécanisme génétique de la transcription de l'ADN vers les protéines, pour différents types de cellule dont les eucaryotes.
 
 Le génôme complet du SARS-CoV-2 est disponible sur <a href="https://www.kaggle.com/paultimothymooney/coronavirus-genome-sequence#MN908947.txt">Kaggle</a>.
-Il s'agit d'un virus à ARN qui pirate les ARNt des cellules humaines, le génôme fait un peu moins de 30000 bases
+Il s'agit d'un virus à ARN qui pirate les ARNt des cellules humaines, le génôme contient 29903 bases
 
 La transcription d'un ARN de virus est plus complexe que celui d'un ARN celullaire car il peut être lu dans les 2 sens et avec 3 décalages différents en fonction de son insertion dans l'ARN hôte qui est aléatoire, il y a donc 6 transcriptions: les frames 1,2,3,4,5,6. Le virus génère 141 proteines, dont voici la représentation <a href="data/covid19.aa">covid19.aa</a>
 
 Similarité HIV
 
-Il est vrai qu'une séquence de 38 bases ressemble à une séquence du HIV
+Il est vrai qu'une séquence de 38 bases ressemble à une séquence du HIV qui est beaucoup plus gros avec 4.5 millions de bases
 <img src="data/hiv1.png">
 Il s'agit d'une ressemblance 33/38 soit 87%. Nous pouvons nous dire que 38 bases sur 30000 représente seulement 0.1% du virus, cependant cette séquence est utilisée pour transcrire un protéine, ce qui représente 0.7% des proteïnes générées ce qui n'est pas rien
 
@@ -107,9 +107,13 @@ Contre arguments: Un virus de chauve souris possède une séquence similaire
 <img src="data/bat1.png">Cette séquence code une enzyme indispensable à tous les virus ARN comme le HIV.
 Ces séquences n'appartiennent pas à la proteine spike utilisée pour les vaccins, sauf accident il n'y aurait aucun intérêt à les injecter.
 Ces séquences sont très courtes car elles ne peuvent transcrire que 10 acides aminées ce qui est insufisant pour copier une proteine entière.
+Le HIV est un retrovirus qui fonctionne différement d'un virus coronavirus
 
-La séquence TTCCTATGGACAGTACAGTTAAAAACTATT se retrouve dans une séquence plus grande à la position <a href="covid19.aa">20401</a> qui code la protéine commencant par SPFELEDFIP<b>MDSTVKNYFI</b>... de 80 acides aminées. Je n'ai rien trouvé sur cette protéine sur Internet
+La séquence TTCCTATGGACAGTACAGTTAAAAACTATT se retrouve dans une séquence plus grande à la position <a href="covid19.aa">20401</a> qui code la protéine commencant par SPFELEDFIP<b>MDSTVKNYFI</b>... de 80 acides aminées.
 
-Conclusion: La séquence à 38 bases a de grande chance d'être naturelle. Concernant la séquence à 30 bases, le hasard ne peut l'expliquer, de plus elle modifie une proteine du virus, soit elle provient naturellement d'un croisement d'un autre virus (probable), soit c'est une manipulation humaine (moins probable). Il suffit d'étudier cette protéine, de voir si elle est présente dans d'autres virus pour lever le doute et/ou comprendre à quoi sert cette proteine.
+Une transcription détaillée du virus est disponible à la <a href="https://www.ncbi.nlm.nih.gov/nuccore/1798174254>NCBI</a>.
+Sur cette transcription nous retrouvons bien la séquence à la position 20401 mais il ne semble pas produire de protéine. Elle semble être dans la plus grande zone de la séquence sans transcription comprise 13542 et 21543. La fameuse proteine Spike se trouve 1100 bases plus loin.
+
+Conclusion: Ces séquences sont naturelles, il existe une infime possibilité que la séquence de 30 bases soit le résultat d'une manipulation humaine qui a échouée.
 
 
