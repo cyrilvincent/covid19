@@ -88,14 +88,13 @@ En 2011 et 2013 j'avais publié sur Google Code un programme en C# reproduisant 
 Le génôme complet du SARS-CoV-2 est disponible <a href="https://www.kaggle.com/paultimothymooney/coronavirus-genome-sequence#MN908947.txt">ici</a>
 Il s'agit d'un virus à ARN qui pirate les ARNt des cellules humaines, le génôme fait un peu moins de 30000 bases
 
-J'ai d'abord convertis le génôme en ARN <a href="data/covid19.rna">Covid19.rna</a>, j'ai ensuite créé par retro-transcription son ADN <a href="data/covid19.dna">Covid19.dna</a>.
-La transcription d'un ARN de virus est plus complexe que celui d'un ARN celullaire car il peut être lu dans les 2 sens et avec 3 décalages différents en fonction de son insertion dans l'ARN hôte, il y a donc 6 transcriptions possibles : les frames 0,1,2,-0,-1 et -2. Le virus génère 41 proteines, dont voici la représentation <a href="data/covid19.aa">covid19.aa</a>
+La transcription d'un ARN de virus est plus complexe que celui d'un ARN celullaire car il peut être lu dans les 2 sens et avec 3 décalages différents en fonction de son insertion dans l'ARN hôte, il y a donc 6 transcriptions possibles : les frames 1,2,3,4,5,6. Le virus génère 141 proteines, dont voici la représentation <a href="data/covid19.aa">covid19.aa</a>
 
 Similarité HIV
 
 Il est vrai qu'une séquence de 38 bases ressemble au HIV
 <img src="data/hiv1.png">
-Il s'agit d'une ressemblance 33/38 soit 87%. Nous pouvons nous dire que 38 bases sur 30000 représente seulement 0.1% du virus, cependant cette séquence est utilisée pour transcrire un protéine, ce qui représente 2.5% des proteïnes générées ce qui n'est pas rien
+Il s'agit d'une ressemblance 33/38 soit 87%. Nous pouvons nous dire que 38 bases sur 30000 représente seulement 0.1% du virus, cependant cette séquence est utilisée pour transcrire un protéine, ce qui représente 0.7% des proteïnes générées ce qui n'est pas rien
 
 Une autre séquence plus courte ressemble au HIV
 <img src="data/hiv2.png">
@@ -107,8 +106,8 @@ Contre arguments: Un virus de chauve souris possède une séquence similaire
 Ces séquences n'appartiennent pas à la proteine spike utilisée pour les vaccins.
 Ces séquences sont très courtes car elles ne peuvent transcrire que 10 acides aminées ce qui est insufisant pour copier une proteine.
 
-Conclusion: La séquence à 38 bases est naturelle. Concernant la séquence à 30 bases, le hasard ne peut l'expliquer, soit elle provient d'un autre virus, ce qui est probable, soit c'est une manipulation humaine, ce qui est improbable mais pas impossible.
+La séquence TTCCTATGGACAGTACAGTTAAAAACTATT se retrouve dans une séquence plus grande à la position 20401 qui code la protéine commencant par SPFELEDFIP<b>MDSTVKNYFI</b> qui n'est pas documentée sur Internet
 
-  
+Conclusion: La séquence à 38 bases est naturelle. Concernant la séquence à 30 bases, le hasard ne peut l'expliquer, soit elle provient d'un autre virus, ce qui est probable, soit c'est une manipulation humaine, ce qui est improbable mais pas impossible. 
 
 
