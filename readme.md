@@ -14,7 +14,7 @@
     <ul>
         <li>Le modèle SCIRE prévoit une extinction du virus début Juin avec une baisse par vaguelette</li>
         <li>Le modèle ML prévoit un extinction en Mai</li>
-        <li>24000 décès au total</li>
+        <li>+1000 décès</li>
     </ul>
     <img src="data/figured1.png">
 <p>Scénario Start & Go pessimiste: le confinement est un échec, R=R0
@@ -27,14 +27,14 @@
     <ul>
         <li>Une baisse rapide du virus sur 1 mois</li>
         <li>Un petit rebond fin Juin</li>
-        <li>27000 décès</li>
+        <li>+4000 décès</li>
     </ul>
     <img src="data/figured3.png">
 <p>Scénario Parisien médian-pessimiste : les mesures de détection fonctionnent moyennement, seulement 50% des symptomatiques sont détectés soit 10% de détection totale, l'été fait son travail, baisse du R de 0.05 tous les 15 jours, R = R0 * 0.5 * 0.9 - fsin(t) / 4 ~= [1.6:2.2]
     <ul>
         <li>Très incertain en fonction du paramètre de saisonnalité</li>
         <li>Un gros pric à J+15 à la limite du confinement et une baisse sur 75 à 100 jours</li>
-        <li>50000 décès</li>
+        <li>doublement des décès</li>
         <li>Présence d'un pic à l'automne si l'été n'est pas assez protecteur</li>
     </ul>
 Ci dessous les 3 modélisations où l'amortissement de l'été est d'un facteur de 1/2, 1/3, 1/4
@@ -51,7 +51,7 @@ Ci dessous les 3 modélisations où l'amortissement de l'été est d'un facteur 
 <img src="data/figure.png">
 <p>A la date du déconfinement le 11 mai (J128), le modèle ML nous donne un score trop faible (30%) pour être fiable et le modèle SCIRE est difficile à étudier quand R varie, le taux d'erreur est donc énorme</p>
 <ul>
-    <li>Le modèle SCIRE prévoit 800000 personnes contaminants</li>
+    <li>Le modèle SCIRE prévoit 800000 personnes contaminantes</li>
     <li>Le modèle ML prévoit 160000 cas détectés et 3000 cas/jour détectés</li>
     <li>Le modèle SCIRE prévoit 32000 décès</li>
     <li>Le modèle ML prévoir 24000 décès hopitaux et EPHAD</li>
@@ -60,12 +60,12 @@ Ci dessous les 3 modélisations où l'amortissement de l'été est d'un facteur 
 </ul>
 <p>En Auvergne Rhône-Alpes à la date du déconfinement le 11 mai (J128)
 <ul>
-    <li>Le modèle SCIRE prévoit 18000 personnes contaminants</li>
+    <li>Le modèle SCIRE prévoit 18000 personnes contaminantes</li>
     <li>Le modèle ML prévoit 8500 cas détectés et 160 cas/jour détectés</li>
     <li>Le modèle ML prévoir 1300 décès hopitaux et EPHAD</li>
     <li>250000 personnes ayant été infectées</li>
     <li>Taux d'infection de 3%</li>
-    <li>Sur le plateau des 4 montagnes dans le Vercors on peut extrapoler au déconfinement 27 contaminants, 13 cas détectés, 0 cas/jour, 2 décès et 375 personnes infectées</li>
+    <li>Sur le plateau des 4 montagnes dans le Vercors on peut extrapoler au déconfinement 30 contaminants, 15 cas détectés, 0 cas/jour, 2 décès et 400 personnes infectées</li>
 </ul>
 Conclusion: le paramètre R reflète l'interaction entre les personnes, le confinement l'a diminué d'un facteur 7, de 3.3 à 0.5 avec une moyenne à 1
 
