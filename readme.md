@@ -2,14 +2,14 @@
 <p>Par <a href="http://www.cyrilvincent.com">Cyril Vincent</a></p>
 <img src="data/giphy.gif"/>
 <p>Etant expert en IA et Machine Learning, j'ai mené une étude sur les données COVID disponible sur le site santepubliquefrance.fr</p>
-<p>Evidement <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
+<p>C'est juste un exercice de style, <b>je ne suis pas médecin</b> donc cette étude ne vaut rien!!</p>
 <img src="https://i.ytimg.com/vi/8Dicw41hHlk/maxresdefault.jpg"/>
-<p>J'ai téléchargé et nettoyé les données sur https://coronavirus.politologue.com/coronavirus-france.FR </p>
+<p>J'ai téléchargé et nettoyé les données sur <a href="https://coronavirus.politologue.com/coronavirus-france.FR">politologue.com</a> </p>
 <p>J'ai utilisé le framework Scikit-Learn en Python 3.8 pour analyser les données avec du Machine Learning (ML) et une régression polynômiale ridge de degré 4. Un réseau neuronal a été tenté sans succès par manque de données</p>
 <p>J'ai également programmé en Python le modèle SCIRE+ à l'aide du framework NumPy (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations en modulant le facteur beta d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
 <img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://numpy.org/_static/numpy_logo.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
 <h2>Etude 3: Le déconfinement</h2>
-<p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour cela j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et une fonction d'atténuation sinusoidale dû à l'été R = R * DetectionRate * sin(2xpi/365)
+<p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour cela j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et une fonction d'atténuation sinusoidale dûe à l'été R = R * DetectionRate * sin(2xpi/365)
 <p>Scénario Marseillais optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.5 * 0.1 - fsin(t) ~= [0..0.4]
     <ul>
         <li>Le modèle SCIRE prévoit une extinction du virus début Juin avec une baisse par vaguelette</li>
@@ -30,42 +30,44 @@
         <li>27000 décès</li>
     </ul>
     <img src="data/figured3.png">
-<p>Scénario Parisien médian-pessimiste : les mesures de détection fonctionnent moyennement, seul 50% des symptomatiques sont détectés soit 10% de détection totale, le reste fonctionne bien et l'été fait son travail, baisse du R de 0.05 tous les 15 jours, R = R0 * 0.5 * 0.9 - fsin(t) / 4 ~= [1.6:2.2]
+<p>Scénario Parisien médian-pessimiste : les mesures de détection fonctionnent moyennement, seulement 50% des symptomatiques sont détectés soit 10% de détection totale, l'été fait son travail, baisse du R de 0.05 tous les 15 jours, R = R0 * 0.5 * 0.9 - fsin(t) / 4 ~= [1.6:2.2]
     <ul>
         <li>Très incertain en fonction du paramètre de saisonnalité</li>
         <li>Un gros pric à J+15 à la limite du confinement et une baisse sur 75 à 100 jours</li>
         <li>50000 décès</li>
-        <li>Présence d'un pic à l'automne si l'été n'est pas chaud</li>
+        <li>Présence d'un pic à l'automne si l'été n'est pas assez protecteur</li>
     </ul>
 Ci dessous les 3 modélisations où l'amortissement de l'été est d'un facteur de 1/2, 1/3, 1/4
 <img src="data/figured4.png"><img src="data/figured42.png"><img src="data/figured43.png">
 <p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, le ML ne possède pas assez données pour être fiable, il faut donc rester modeste</p>
-<p>Conclusion générale : les modèles sont très incertains, une boule de cristal ferait aussi bien, le paramètre R reflète l'interaction entre les personnes, le confinement l'a diminué d'un facteur 7, d'autres mesures comme les protections et les détections massives arrivent à un résultat proche, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va refluer si les moyens de détection fonctionnent et sont massifs, sinon elle repartira, le risque de 2ème vague à l'automne est présent mais peu quantifiable.</p>
-<p>Comme le montre le sud de la France et l'Afrique, les temps ensoleillés, secs et chauds semblent diminuer fortement R, donc soyons optimiste</p>
+<p>Conclusion: les modèles sont très incertains, une boule de cristal ferait aussi bien, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va refluer si les moyens de détection fonctionnent et sont massifs, sinon elle repartira, le risque de 2ème vague à l'automne est présent mais peu quantifiable.</p>
+<p>Comme le montre le sud de la France et l'Afrique, les temps ensoleillés, secs et chauds semblent diminuer fortement R, donc il faut être optimiste</p>
 
 <h2>Etude 2 : Le confinement</h2>
-<p>En date du 24/4 nous savons que le R0=3.3 est plus optimiste que mon étude 1 et le R a atteint 0.5 soit une baisse d'un facteur 7</p>
+<p>En date du 24/4 (MAJ le 27/04) nous savons que le R0=3.3 est plus optimiste que mon étude 1 et le R a atteint 0.5 soit une baisse d'un facteur 7</p>
 <p>Tout d'abord un modèle SCIRE a été mis en place avec un Rmoyen=1 variant de 3.3 à 0.5</p>
 <img src="data/figurec.png">
 <p>Ensuite un modèle ML a été mis en place à partir du 24/4</p>
 <img src="data/figure.png">
 <p>A la date du déconfinement le 11 mai (J128), le modèle ML nous donne un score trop faible (30%) pour être fiable et le modèle SCIRE est difficile à étudier quand R varie, le taux d'erreur est donc énorme</p>
 <ul>
-    <li>Le modèle SCIRE prévoit 800000 personnes en cours d'infection</li>
-    <li>Le modèle ML prévoit 165000 ca détectés</li>
+    <li>Le modèle SCIRE prévoit 800000 personnes contaminants</li>
+    <li>Le modèle ML prévoit 160000 cas détectés et 3000 cas/jour détectés</li>
     <li>Le modèle SCIRE prévoit 32000 décès</li>
-    <li>Le modèle ML prévoir 23000 décès mais ne tient compte que des chiffres officiels, il ne prends donc pas en compte les décès hors hopitaux et EPHAD</li>
-    <li>4.5 millions de personnes ayant été infectées</li>
+    <li>Le modèle ML prévoir 24000 décès hopitaux et EPHAD</li>
+    <li>4.7 millions de personnes ayant été infectées</li>
     <li>Taux d'infection de 7%</li>
 </ul>
 <p>En Auvergne Rhône-Alpes à la date du déconfinement le 11 mai (J128)
 <ul>
-    <li>Le modèle SCIRE prévoit 18000 cas réels par jour, contre 0 pour ML</li>
-    <li>1200 décès</li>
-    <li>0.3 millions de personnes ayant été infectées</li>
+    <li>Le modèle SCIRE prévoit 18000 personnes contaminants</li>
+    <li>Le modèle ML prévoit 8500 cas détectés et 160 cas/jour détectés</li>
+    <li>Le modèle ML prévoir 1300 décès hopitaux et EPHAD</li>
+    <li>250000 personnes ayant été infectées</li>
     <li>Taux d'infection de 3%</li>
+    <li>Sur le plateau des 4 montagnes dans le Vercors on peut extrapoler au déconfinement 27 contaminants, 13 cas détectés, 0 cas/jour, 2 décès et 375 personnes infectées</li>
 </ul>
-
+Conclusion: le paramètre R reflète l'interaction entre les personnes, le confinement l'a diminué d'un facteur 7, de 3.3 à 0.5 avec une moyenne à 1
 
 <h2>Etude 1: Sans confinement</h2>
 <p>Seul le modèle SCIRE a pu être utilisé car les données étaient insuffisantes pour le Machine Learning</p>
@@ -116,5 +118,5 @@ Une transcription détaillée du virus est disponible à la <a href="https://www
 Sur cette transcription nous retrouvons bien la séquence à la position 20401 mais elle ne semble pas produire de gêne. Elle semble être dans la plus grande zone de la séquence sans transcription comprise 13542 et 21543. La fameuse proteine Spike se trouve 1100 bases plus loin.
 
 Conclusion: Ces séquences sont naturelles, il existe une infime possibilité que la séquence de 30 bases soit le résultat d'une manipulation humaine qui a échouée. J'encourage néanmoins à lire la page <a href="https://fr.wikipedia.org/wiki/Institut_de_virologie_de_Wuhan">Wikipedia du laboratoire P4 de Wuhan</a>.
-<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F100010981668794%2Fvideos%2F1089207854788593%2F&show_text=0&width=476" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+
 
