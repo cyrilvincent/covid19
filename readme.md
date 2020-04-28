@@ -9,38 +9,35 @@
 <p>J'ai également programmé en Python le modèle SCIRE+ à l'aide du framework NumPy (Sain-Contaminé-Infecté-Rétablie-Etendue) avec des améliorations en modulant le facteur beta d'après https://interstices.info/modeliser-la-propagation-dune-epidemie
 <img src="data/scir.png"><img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"><img src="https://numpy.org/_static/numpy_logo.png"><img src="https://www.python.org/static/img/python-logo@2x.png">
 <h2>Etude 3: Le déconfinement</h2>
+<p>Etude démarrée au 24/4. MAJ le 28/4 avec plan de déconfinement et les donéne inquiétante de l'alemagne où le R est passé de 0.7 à 1 en 2 semaines. En France le R est à 0.5.</p>
 <p>Au déconfinement, le 11 mai (J128), je propose 4 scénarios, pour cela j'ai modifié SCIRE pour ajouter un taux de détection des individus infectés et une fonction d'atténuation sinusoidale dûe à l'été R = R * DetectionRate * sin(2xpi/365)
-<p>Scénario Marseillais optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = R0 * 0.5 * 0.1 - fsin(t) ~= [0..0.4]
+<p>Scénario Marseillais optimiste: Comme le SRAS et comme le propose le professeur Raoult, le virus disparait, R = 0.5 - fsin(t) ~= [0..2.1]
     <ul>
-        <li>Le modèle SCIRE prévoit une extinction du virus début Juin avec une baisse par vaguelette</li>
-        <li>Le modèle ML prévoit un extinction en Mai</li>
+        <li>Les modèles prédisent une disparition du virus fin Mai</li>
         <li>+1000 décès</li>
     </ul>
     <img src="data/figured1.png">
-<p>Scénario Start & Go pessimiste: le confinement est un échec, R=R0
+<p>Scénario Start & Go pessimiste: le déconfinement est un échec, R=R0
     <ul>
-        <li>Un énorme pic d'infection à J+50</li>
-        <li>Reconfinement</li>
+        <li>Un 2ème pic et reconfinement à J+50 pour le modèle SCIRE, J+20 pour ML</li>
+        <li>Doublement des décès</li>
     </ul>
     <img src="data/figured2.png"><img src="data/figureml.png">
-<p>Scénario Grenoblois médian: les mesures de protection fonctionnent avec 50% de détection, isolement des patients infectés, protections, un été protecteur, R = R0 * 0.5 * 0.5 - fsin(t) / 2 ~= [0.4:0.8]
+<p>Scénario Allemand médian: les mesures de protection fonctionnent, remontée du R de 0.3 en 15 jours, un été protecteur, R = 0.5 + 0.3t - fsin(t) / 2 ~= [0:3.3]
     <ul>
-        <li>Une baisse rapide du virus sur 1 mois</li>
-        <li>Un petit rebond fin Juin</li>
-        <li>+4000 décès</li>
+        <li>Le virus dispait en 50 jours</li>
+        <li>Le modèle plante pour la rentrée</li>
+        <li>+1000 décès</li>
     </ul>
     <img src="data/figured3.png">
-<p>Scénario Parisien médian-pessimiste : les mesures de détection fonctionnent moyennement, seulement 50% des symptomatiques sont détectés soit 10% de détection totale, l'été fait son travail, baisse du R de 0.05 tous les 15 jours, R = R0 * 0.5 * 0.9 - fsin(t) / 4 ~= [1.6:2.2]
+<p>Scénario Grenoblois médian : les mesures de détection fonctionnent moyennement, remontée du R de 0.2 en 15 jours, l'été n'ai pas aussi protecteur qu'espéré, R = 0.5 + 0.2t * fsin(t) / 4 ~= [0.2:3.3]
     <ul>
-        <li>Très incertain en fonction du paramètre de saisonnalité</li>
-        <li>Un gros pric à J+15 à la limite du confinement et une baisse sur 75 à 100 jours</li>
-        <li>doublement des décès</li>
-        <li>Présence d'un pic à l'automne si l'été n'est pas assez protecteur</li>
+        <li>L'été se passe à l'identique du confinement</li>
+        <li>Reconfinement à la rentrée</li>
+        <li>+ 20000 décès avant reconfinement </li>
     </ul>
-Ci dessous les 3 modélisations où l'amortissement de l'été est d'un facteur de 1/2, 1/3, 1/4
-<img src="data/figured4.png"><img src="data/figured42.png"><img src="data/figured43.png">
-<p>La moindre variation du paramètre R peut complètement modifier l'évolution de l'épidémie, le ML ne possède pas assez données pour être fiable, il faut donc rester modeste</p>
-<p>Conclusion: les modèles sont très incertains, une boule de cristal ferait aussi bien, en mai un petit pic va avoir lieu mais avec un peu de chance l'épidémie va refluer si les moyens de détection fonctionnent et sont massifs, sinon elle repartira, le risque de 2ème vague à l'automne est présent mais peu quantifiable.</p>
+<img src="data/figured4.png">
+<p>Conclusion: Si R repasse au dessus de 1, un second pic sera inévitable</p>
 <p>Comme le montre le sud de la France et l'Afrique, les temps ensoleillés, secs et chauds semblent diminuer fortement R, donc il faut être optimiste</p>
 
 <h2>Etude 2 : Le confinement</h2>

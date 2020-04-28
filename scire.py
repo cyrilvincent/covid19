@@ -95,8 +95,8 @@ if __name__ == '__main__':
     notdetectedrate = 4
     lmbda = 15 # Durée d'infection contagieuse
     v = 2 # Durée incubation non contagieux
-    R0 = 3.3
-    beta  = R0 / lmbda
+    r0 = 3.3
+    beta  = r0 / lmbda
     print(beta)
     mu = 0.005 # Taux mortalité
 
@@ -136,18 +136,15 @@ if __name__ == '__main__':
     DC128 = 23000+9000
     R128 = 800000
     rrate = 0.5 # 0.1 0.5 0.9
-    r128 = 0.5 #0.5
-    C0 = ((DC128 / mu) - R128) / nbfrench * rrate
-    I0 = C0 * rrate
-    S0 = 1 - I0 - C0
-    r0 = R0 * r128 * rrate
-    fsamort = 2 #2,3,4
-    R0D = R0 - R0 / fsamort
-    fsummer = lambda x : -np.sin((x + 118 - 365 / 4 - 30) * 2 * np.pi / 365) * R0 / fsamort
+    r128 = 0.5
+    C128 = (DC128 / notdetectedrate) / nbfrench
+    I128 = C128/7
+    S128 = 1 - I128 - C128
+    fsamort = 4 #1 2 4
+    fsummer = lambda x : -np.sin((x + 118 - 365 / 4 - 30) * 2 * np.pi / 365) * r0 / fsamort
     print(fsummer(np.arange(365)))
-    scire = SCIRE(S0, C0, I0, r0=R0D, v=v, lmbda=lmbda, mu=mu, dr=0, fs = fsummer) #0.1 0 -0.1
+    scire = SCIRE(S128, C128, I128, r0=r128, v=v, lmbda=lmbda, mu=mu, dr=-0.2, fs = fsummer) #0.1 #0 -0.3
     scires = scire.compute(200)
-    ctot = 1 - np.array([x.S for x in scires])
     i = np.array([x.I for x in scires])
     dc = np.array([x.DC for x in scires]) + DC128 / nbfrench
     plt.plot(i * nbfrench, label="Infectés")
