@@ -25,7 +25,7 @@ class SCIRE:
                  lmbda:float = 15,
                  mu:float = 0.005,
                  dr:float = 0,
-                 fs:Callable[[float], float] = lambda _: 0):
+                 fdr:Callable[[float], float] = lambda _: 0):
         """
         :param S: Sain
         :param C: Contaminé
@@ -36,7 +36,7 @@ class SCIRE:
         :param lmbda: durée moyenne de contagieusité
         :param mu: taux de mortalité
         :param dr: facteur de décroissance de R par rapport à R0
-        :param fs: fonction de saisonalité
+        :param fdr: fonction de saisonalité
         """
         self.S = S
         self.C = C
@@ -48,14 +48,14 @@ class SCIRE:
         self.lmbda = lmbda
         self.mu = mu
         self.dr = dr
-        self.fs = fs
+        self.fdr = fdr
         self.i = 0 #dt
-        self.fdsdt = lambda S, I: -(self.beta + self.fs(self.i)) * I * S  # ds/dt
-        self.fdcdt = lambda S, C, I,: (self.beta + self.fs(self.i)) * I * S - C / v  # dc/dt
+        self.fdsdt = lambda S, I: -(self.beta + self.fdr(self.i)) * I * S  # ds/dt
+        self.fdcdt = lambda S, C, I,: (self.beta + self.fdr(self.i)) * I * S - C / v  # dc/dt
         self.fdidt = lambda C, I: C / v - I / self.lmbda - self.mu * I  # dc/dt
         self.fdrdt = lambda I: -I / self.lmbda #dr/dt
         self.fddcdt = lambda I: self.mu * I / self.lmbda #ddc/dt
-        self.fdbetadt = lambda : -self.dr / self.lmbda #dbeta/dt
+        self.fdbetadt = lambda : self.dr / self.lmbda #dbeta/dt
 
     def _computedt(self):
         """
@@ -143,7 +143,7 @@ if __name__ == '__main__':
     fsamort = 4 #1 2 4
     fsummer = lambda x : -np.sin((x + 118 - 365 / 4 - 30) * 2 * np.pi / 365) * r0 / fsamort
     print(fsummer(np.arange(365)))
-    scire = SCIRE(S128, C128, I128, r0=r128, v=v, lmbda=lmbda, mu=mu, dr=-0.2, fs = fsummer) #0.1 #0 -0.3
+    scire = SCIRE(S128, C128, I128, r0=1, v=v, lmbda=lmbda, mu=mu, dr=0.2, fdr= fsummer)
     scires = scire.compute(200)
     i = np.array([x.I for x in scires])
     dc = np.array([x.DC for x in scires]) + DC128 / nbfrench

@@ -157,8 +157,8 @@ print(f"Taux d'infection au déconfinement: {(nbdcdeconf * 1/tx) / 670000:.0f}%"
 print(f"Nouveau cas par jour en france: {modelnbc.predict([[ideconf]])[0]:.0f}")
 nbdcara = 1103
 txara = nbdcara / 20796
-print(f"Nb décès ARA: {nbdcdeconf * txara:.0f}")
 print(f"Nb cas ARA: {nbnbdeconf * txara:.0f}")
+print(f"Nb décès ARA: {nbdcdeconf * txara:.0f}")
 print(f"Nb infection ARA: {nbdcdeconf * 1/tx * txara:.0f}")
 print(f"Taux d'infection ARA: {(nbdcdeconf * 1/tx * txara) / 80000:.0f}%")
 print(f"Nouveau cas par jour en ARA: {modelnbc.predict([[ideconf]])[0] * txara:.0f}")
